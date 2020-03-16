@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040404"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Facebook_button"
+        android:layout_width="231dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginRight="149dp"
+        android:background="@drawable/rounded_button_fb"
+        android:text="CONTINUE WITH &#10; FACEBOOK"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/facebook2"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome_Text" />
+
+    <ImageView
+        android:id="@+id/Spotify_Logo"
+        android:layout_width="172dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        app:srcCompat="@drawable/spotifyy" />
+
+    <TextView
+        android:id="@+id/Welcome_Text"
+        android:layout_width="295dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:text="Millions of songs. &#10; Free on Spotify."
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spotify_Logo" />
+
+    <Button
+        android:id="@+id/Signup_button"
+        android:layout_width="231dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginRight="149dp"
+        android:background="@drawable/rounded_button_signup"
+        android:onClick="OpenSecondSignup"
+        android:text="SIGN UP FREE"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome_Text" />
+
+    <Button
+        android:id="@+id/Login_button"
+        android:layout_width="115dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginLeft="162dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginRight="161dp"
+        android:background="@android:color/black"
+        android:shadowColor="#EA0606"
+        android:text="LOG IN"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Facebook_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
