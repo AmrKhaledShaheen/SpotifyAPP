@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:state_pressed="false">
         <shape
@@ -11,7 +12,7 @@
                 android:topLeftRadius="9dp"
                 android:topRightRadius="9dp"/>
             <solid
-                android:color="#949F94"/>
+                android:color="#FEFFFE"/>
 
         </shape>
     </item>
@@ -26,13 +27,27 @@
                 android:topLeftRadius="9dp"
                 android:topRightRadius="9dp"/>
             <solid
+                android:color="#949F94"/>
+
+        </shape>
+    </item>
+    <item
+        android:state_enabled="true">
+        <shape
+            android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="9dp"
+                android:bottomRightRadius="9dp"
+                android:radius="400dp"
+                android:topLeftRadius="9dp"
+                android:topRightRadius="9dp"/>
+            <solid
                 android:color="#FAFBFA"/>
 
         </shape>
     </item>
-
     <item
-        android:state_focused="true">
+        android:state_enabled="false">
         <shape
             android:shape="rectangle">
             <corners
@@ -46,19 +61,4 @@
 
         </shape>
     </item>
-    <item
-        android:state_focused="false">
-        <shape
-            android:shape="rectangle">
-            <corners
-                android:bottomLeftRadius="9dp"
-                android:bottomRightRadius="9dp"
-                android:radius="400dp"
-                android:topLeftRadius="9dp"
-                android:topRightRadius="9dp"/>
-            <solid
-                android:color="#FCFDFC"/>
-        </shape>
-    </item>
-
 </selector>

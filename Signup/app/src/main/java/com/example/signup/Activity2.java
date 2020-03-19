@@ -9,6 +9,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,6 +29,10 @@ public class Activity2 extends AppCompatActivity {
         buttonNext=findViewById(R.id.Next_first);
         text1=findViewById(R.id.confirm_text);
         text2=findViewById(R.id.confirm_text2);
+
+        Button buttonNext=(Button)findViewById(R.id.Next_first);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
+        buttonNext.startAnimation(animation);
 
         if (editTextEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))
         {
@@ -74,6 +80,20 @@ public class Activity2 extends AppCompatActivity {
                 else if(emailInput.matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))
                 {
                     buttonNext.setEnabled(true);
+                    text1.setVisibility(View.VISIBLE);
+                    text2.setVisibility(View.INVISIBLE);
+                    editTextEmail.setFocusable(true);
+                    editTextEmail.setPressed(false);
+                    editTextEmail.setTextColor(Color.WHITE);
+                }
+                else if(emailInput.matches(""))
+                {
+                    text1.setVisibility(View.VISIBLE);
+                    text2.setVisibility(View.INVISIBLE);
+                    editTextEmail.setFocusable(true);
+                    editTextEmail.setPressed(false);
+                    editTextEmail.setTextColor(Color.WHITE);
+                    buttonNext.setEnabled(false);
                 }
             }
             @Override

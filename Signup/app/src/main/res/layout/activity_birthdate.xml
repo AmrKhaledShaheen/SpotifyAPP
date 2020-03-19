@@ -26,22 +26,23 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="127dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="166dp"
-        android:layout_marginLeft="166dp"
-        android:layout_marginTop="274dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginRight="157dp"
-        android:layout_marginBottom="148dp"
+        android:layout_width="146dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginRight="133dp"
+        android:layout_marginBottom="77dp"
         android:background="@drawable/rounded_button_next"
         android:enabled="true"
+        android:onClick="NexttoGender"
         android:text="Next"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <DatePicker
         android:id="@+id/datepicker"
@@ -68,4 +69,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"></DatePicker>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginBottom="18dp"
+        android:text="Sorry, you don't meet Spotify's age requirments."
+        android:textColor="#FDF9F9"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datepicker" />
 </androidx.constraintlayout.widget.ConstraintLayout>

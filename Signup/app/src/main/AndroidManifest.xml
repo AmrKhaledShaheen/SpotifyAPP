@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Createfinal"
+            android:label="              Create account"
+            android:parentActivityName=".Gender" />
+        <activity
+            android:name=".Gender"
+            android:label="              Create account"
+            android:parentActivityName=".birthdate" />
+        <activity
             android:name=".birthdate"
             android:label="              Create account"
             android:parentActivityName=".CreatePass" />
