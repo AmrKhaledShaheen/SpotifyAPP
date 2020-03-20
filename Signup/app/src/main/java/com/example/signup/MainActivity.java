@@ -11,6 +11,20 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+
+
+public void viewLogInPage(View view)
+{
+        //Button Signup_button=(Button)findViewById(R.id.Login_button);
+        Intent intent= new Intent(this,LoginActivity.class);
+        startActivity(intent);
+        //Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
+        //Signup_button.startAnimation(animation);
+}
+
+
 public void OpenSecondSignup(View view)
 {
     Button Signup_button=(Button)findViewById(R.id.Signup_button);

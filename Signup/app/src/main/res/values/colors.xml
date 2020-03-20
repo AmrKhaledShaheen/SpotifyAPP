@@ -6,4 +6,17 @@
     <color name="Grayyy">#2C302C</color>
     <color name="White">#FFFFFF</color>
     <color name="Create">#252424</color>
+
+
+
+    <color name="blackGrey">#696969</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#0a0a0a</color>
+    <color name="grey">#5A5757</color>
+    <color name="whitegrey">#808080</color>
+    <color name="grey3">#676767</color>
+
+
+
+
 </resources>

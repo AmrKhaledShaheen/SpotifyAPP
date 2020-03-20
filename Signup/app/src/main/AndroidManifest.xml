@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:label=" "
+            android:parentActivityName=".LoginActivity"
+
+        />
+        <activity
+            android:name=".LoginActivity"
+            android:label=" "
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
             android:name=".Createfinal"
             android:label="              Create account"
             android:parentActivityName=".Gender" />
