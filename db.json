@@ -1,0 +1,7 @@
+{
+  "posts": [
+    { "username": "Omar", "email": "odawah8@gmail.com", "password": "lifesucks" },
+    { "username": "Sayed", "email": "sayed@gmail.com", "password": "sayed" },
+    { "username": "Youssef", "email": "youssef@gmail.com", "password": "youssef" }
+  ]
+}
