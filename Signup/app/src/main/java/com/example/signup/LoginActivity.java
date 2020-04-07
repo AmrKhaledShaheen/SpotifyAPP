@@ -20,12 +20,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username,password;
     private Button login;
     private SpannableString spannableString;
-
+    private Call<List<Post>> call;
+    private DataServer dataServer;
     private TextWatcher mTextWatcher=new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -88,12 +97,57 @@ public class LoginActivity extends AppCompatActivity {
 
         username=(EditText) findViewById(R.id.email_usernameEditText);
         password=(EditText) findViewById(R.id.passwordEditText);
-        String Username=username.getText().toString();
-        String Password=password.getText().toString();
+        final String Username=username.getText().toString();
+        final String Password=password.getText().toString();
+        call=dataServer.getPosts();
+        call.enqueue(new Callback<List<Post>>() {
+            @Override
+            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(LoginActivity.this,"Code: " + response.code(),Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                List<Post> posts=response.body();
+
+                for(Post post:posts)
+                {
+                    Log.i("login",Username);
+                    Log.i("login",Password);
+                    Log.i("check",post.getUsername());
+                    Log.i("check",post.getPassword());
+                    if((Username.equals(post.getUsername()) || Username.equals(post.getEmail())))
+                    {
+                        if(Password.equals(post.getPassword()))
+                        {
+                            Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
+                            TextView show=(TextView) findViewById(R.id.textView3);
+                            show.setText("Rightttttttttttttt");
+
+                            return;
+                        }
+                        else
+                        {
+                            TextView show=(TextView) findViewById(R.id.textView3);
+                            show.setText("Incorrect Password");
+                            return;
+                        }
+                    }
+                }
+                TextView show=(TextView) findViewById(R.id.textView3);
+                show.setText("This email and password combination is incorrect.");
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Post>> call, Throwable t) {
+                Toast.makeText(LoginActivity.this,t.getMessage().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //Toast.makeText(LoginActivity.this,"Welcome Omar!",Toast.LENGTH_SHORT).show();
         //Log.i("login","done");
-        GlobalClass globalClass=new GlobalClass();
+        /*GlobalClass globalClass=new GlobalClass();
         globalClass.addto_login("Omar","lifesucks");
         globalClass.addto_login("Sayed","hibye");
         globalClass.print();
@@ -111,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
             TextView show=(TextView) findViewById(R.id.textView3);
             show.setText("This email and password combination is incorrect.");
             Toast.makeText(LoginActivity.this,msg,Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
 
@@ -125,6 +179,15 @@ public class LoginActivity extends AppCompatActivity {
         username.addTextChangedListener(mTextWatcher);
         password.addTextChangedListener(mTextWatcher);
         checkFieldsForEmptyValues();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://my-json-server.typicode.com/Omar129/DataCheck/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        dataServer=retrofit.create(DataServer.class);
+
+
         //Toolbar toolbar=findViewById(R.id.toolbar)
     }
 }
