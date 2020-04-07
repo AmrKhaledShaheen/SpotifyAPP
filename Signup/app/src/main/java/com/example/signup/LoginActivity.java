@@ -181,7 +181,7 @@ public class LoginActivity extends AppCompatActivity {
         checkFieldsForEmptyValues();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://my-json-server.typicode.com/Omar129/DataCheck/")
+                .baseUrl("https://my-json-server.typicode.com/AmrKhaledShaheen/SpotifyAPP/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

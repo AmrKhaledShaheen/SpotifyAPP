@@ -48,7 +48,7 @@ public class Activity2 extends AppCompatActivity {
         if (editTextEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))
         {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("https://my-json-server.typicode.com/Omar129/DataCheck/")
+                    .baseUrl("https://my-json-server.typicode.com/AmrKhaledShaheen/SpotifyAPP/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             DataServer dataServer = retrofit.create(DataServer.class);
