@@ -26,13 +26,38 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Activity2 extends AppCompatActivity {
+    /**
+     * emailPattern is to check validation of right way for an email
+     */
     String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+[a-z]+";
+    /**
+     * editText it's a place where user write his email
+     */
     EditText editTextEmail;
+    /**
+     * Button for user to click on to open next activity
+     */
     Button buttonNext;
+    /**
+     * TextView to show messages to user
+     */
     TextView text1;
     TextView text2;
+    /**
+     * boolean x to allow user to click on button Next for the first time
+      */
     boolean x=false;
+    /**
+     * String y to check if username is already registered or not
+     */
     String y="0";
+
+    /**
+     * checks if email is written a right way(with .com) to enable button or disable button and also to change visibility text1 and text2
+     * Checks if email is in database
+
+     * @param view
+     */
 
     public void OpenThirdSignup(View view)
     {
@@ -94,6 +119,17 @@ public class Activity2 extends AppCompatActivity {
         }
         //checkintent(y);
     }
+
+    /**
+     * gets called from function OpenThirdSignUp
+     * If y=0
+     * opens next activity
+     * @see CreatePass
+     * If y=1
+     * opens login activity
+     * @see LoginActivity
+     * @param y
+     */
     public void checkintent(String y)
     {
         if(y=="1")
@@ -113,6 +149,12 @@ public class Activity2 extends AppCompatActivity {
         }
     }
 
+    /**
+     * calls function onText
+     * adds textChangeListener(checks length of email to enable button or disable it)
+     * also checks if email is written in right way
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -12,10 +12,12 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
 
-
-
-
-public void viewLogInPage(View view)
+    /**
+     * opens next activity
+     * @see LoginActivity
+     * @param view
+     */
+    public void viewLogInPage(View view)
 {
         //Button Signup_button=(Button)findViewById(R.id.Login_button);
         Intent intent= new Intent(this,LoginActivity.class);
@@ -24,6 +26,12 @@ public void viewLogInPage(View view)
         //Signup_button.startAnimation(animation);
 }
 
+    /**
+     * opens next activity
+     * @see Activity2
+     * creates animation for button
+     * @param view
+     */
 
 public void OpenSecondSignup(View view)
 {
@@ -34,7 +42,11 @@ public void OpenSecondSignup(View view)
     Signup_button.startAnimation(animation);
 }
 
-public void FbClick(View view)
+    /**
+     * creates animation
+     * @param view
+     */
+    public void FbClick(View view)
 {
     Button Fb_button=(Button)findViewById(R.id.Facebook_button);
     Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);

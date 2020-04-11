@@ -109,7 +109,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
                 for(Post post:posts) {
 
-                    if(email==post.getEmail())
+                    if(email.equals(post.getEmail()))
                     {
                         emailForPasswordBackUp=email;
                         textView2.setText("Correct Email");

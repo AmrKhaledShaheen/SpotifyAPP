@@ -1,7 +1,9 @@
 package com.example.signup;
 
 public class Post {
-
+    /**
+     * Variables for object created all are string as shown
+     */
     private String email;
     private String username;
     private String password;

@@ -19,6 +19,12 @@ import android.widget.Toast;
 
 public class CreatePass extends AppCompatActivity {
 
+    /**
+     * opens next activity
+     * @see birthdate
+     * @param view
+     */
+
     public void OpenFourthSignup(View view)
     {
 
@@ -31,6 +37,11 @@ public class CreatePass extends AppCompatActivity {
 
     }
 
+    /**
+     * creates addTextChangedListener --> checks on password length if greater than 8 makes both textviews invisible and make button enabled and if less makes button disabled
+     * creates setOnKeyListener checks on password length
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

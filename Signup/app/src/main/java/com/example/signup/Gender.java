@@ -12,7 +12,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 public class Gender extends AppCompatActivity {
-
+    /**
+     * opens next activity
+     * @see Createfinal
+     * @param view
+     */
     public void Femaleonclick(View view)
     {
 
@@ -27,6 +31,11 @@ public class Gender extends AppCompatActivity {
         startActivity(intent);
 
     }
+    /**
+     * opens next activity
+     * @see Createfinal
+     * @param view
+     */
     public void MaleClick(View view)
     {
         Button MaleButton=(Button)findViewById(R.id.MaleButton);

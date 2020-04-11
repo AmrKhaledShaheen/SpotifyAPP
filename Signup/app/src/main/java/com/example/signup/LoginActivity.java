@@ -115,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
     }*/
 
     /**
+     * gets called when clicked on button
      * checks if username and password are correct and goes to the next activity
      * @see
      * @param view

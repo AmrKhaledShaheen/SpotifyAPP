@@ -1,4 +1,4 @@
-package com.example.signup;
+/*package com.example.signup;
 
 import android.app.Application;
 import android.util.Log;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GlobalClass extends Application {
-
+    /*
     private List<String> username_list=new ArrayList<String>();
     private List<String> password_list=new ArrayList<String>();
     private Map<String,String> login=new HashMap<String,String>();
@@ -47,11 +47,11 @@ public class GlobalClass extends Application {
     {
         for(Map.Entry<String,String> entry : login.entrySet())
         {
-            Log.i("HABD",entry.getKey());
+            //Log.i("HABD",entry.getKey());
         }
     }
 
-    /*public void addto_usernameList(String username)
+    public void addto_usernameList(String username)
     {
         username_list.add(username);
     }
@@ -77,7 +77,6 @@ public class GlobalClass extends Application {
                 return true;
         }
         return false;
-    }*/
+    }
 
-
-}
+}*/

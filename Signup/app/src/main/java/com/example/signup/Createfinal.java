@@ -37,6 +37,15 @@ public class Createfinal extends AppCompatActivity {
 
     }
 
+    /**
+     * creates textChangedListener
+     * checks length if its correct
+     * enable button and change colors
+     * and if it's incorrect it disable button
+     * sets text style
+     * determines words to open terms and conditions and privacy
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

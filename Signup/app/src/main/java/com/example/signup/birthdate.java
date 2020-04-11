@@ -23,8 +23,20 @@ import android.content.Intent;
 import android.widget.Toast;
 
 public class birthdate extends AppCompatActivity  {
-
+    /**
+     * y integer used to check if age is able to use the application or not
+     */
     int y=0;
+
+    /**
+     * gets called by button next
+     * if(y==1)
+     * opens next activity
+     * @see Gender
+     * if(y==0)
+     * allows a message to be visible and make button disabled
+     * @param view
+     */
     public void NexttoGender(View view)
 {
     TextView mesg= (TextView)findViewById(R.id.textView6);
@@ -43,6 +55,12 @@ public class birthdate extends AppCompatActivity  {
     }
 }
 
+    /**
+     * creates DatePicker to pick date
+     * create Calender up to date
+     * checks if age is bigger than the minimum or not
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
