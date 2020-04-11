@@ -12,8 +12,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 /**
- * @version 1.0
  * The fourth activity in signup process
+ * @version 1.0
  */
 public class Gender extends AppCompatActivity {
     /**

@@ -24,8 +24,8 @@ import android.widget.Toast;
 
 
 /**
- * @version 1.0
  * The third activity in signup process
+ * @version 1.0
  */
 public class birthdate extends AppCompatActivity  {
     /**

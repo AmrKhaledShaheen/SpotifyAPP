@@ -1,8 +1,9 @@
 package com.example.signup;
 
 /**
- * @verison 1.0
  * a class with variables needed to check on in signup and signin process
+ * @verison 1.0
+
  */
 public class Post {
     /**

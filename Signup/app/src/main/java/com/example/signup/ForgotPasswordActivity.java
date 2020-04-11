@@ -23,8 +23,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @version 1.0
  * This activity opens when user forgets his password and wants to get it back using his email
+ * @version 1.0
  */
 public class ForgotPasswordActivity extends AppCompatActivity {
     /**

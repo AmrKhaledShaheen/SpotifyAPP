@@ -30,8 +30,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
- * @version 1.0
  * This is the begining activity in sign in process
+ * @version 1.0
  */
 public class LoginActivity extends AppCompatActivity {
     /**

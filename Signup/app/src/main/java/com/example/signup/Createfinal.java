@@ -25,8 +25,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * @version 1.0
  * The fifth activity in signup process
+ * @version 1.0
  */
 public class Createfinal extends AppCompatActivity {
 
