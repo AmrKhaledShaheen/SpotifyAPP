@@ -17,6 +17,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * @version 1.0
+ * The second activity in signup process
+ */
 public class CreatePass extends AppCompatActivity {
 
     /**

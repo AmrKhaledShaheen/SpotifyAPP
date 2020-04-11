@@ -22,6 +22,11 @@ import java.util.Date;
 import android.content.Intent;
 import android.widget.Toast;
 
+
+/**
+ * @version 1.0
+ * The third activity in signup process
+ */
 public class birthdate extends AppCompatActivity  {
     /**
      * y integer used to check if age is able to use the application or not

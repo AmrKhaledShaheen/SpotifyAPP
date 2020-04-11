@@ -1,5 +1,9 @@
 package com.example.signup;
 
+/**
+ * @verison 1.0
+ * a class with variables needed to check on in signup and signin process
+ */
 public class Post {
     /**
      * Variables for object created all are string as shown

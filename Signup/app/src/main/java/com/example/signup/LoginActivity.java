@@ -28,6 +28,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+/**
+ * @version 1.0
+ * This is the begining activity in sign in process
+ */
 public class LoginActivity extends AppCompatActivity {
     /**
      * EditText for user to write username and password in each one for login request
@@ -198,7 +203,11 @@ public class LoginActivity extends AppCompatActivity {
         }*/
     }
 
-
+    /**
+     * It adds TextChangedListener
+     * It creates a retrofit way to access fake server and gets data from it
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

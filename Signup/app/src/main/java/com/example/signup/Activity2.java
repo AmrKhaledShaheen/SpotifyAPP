@@ -25,6 +25,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @version 1.0
+ * This is the begining activity in sign up process
+ */
+
+
 public class Activity2 extends AppCompatActivity {
     /**
      * emailPattern is to check validation of right way for an email

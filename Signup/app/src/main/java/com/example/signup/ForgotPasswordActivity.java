@@ -22,10 +22,18 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * @version 1.0
+ * This activity opens when user forgets his password and wants to get it back using his email
+ */
 public class ForgotPasswordActivity extends AppCompatActivity {
     /**
      * Call is for fake server it has list of objects (post) which has many variables as username / email / password
      */
+    /**
+     * a pattern to check if the email is written in the right way
+     */
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+[a-z]+";
     private Call<List<Post>> call;
     /**
      * Button for the user to click on
@@ -72,12 +80,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         username=(EditText) findViewById(R.id.email_usernameEditText2);
         String s1 = username.getText().toString();
-        if (s1.equals("")) {
+        if (s1.equals("") || !(username.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))) {
 
             getlink.setEnabled(false);
             getlink.setBackgroundResource(R.drawable.rounded_button_login);
             getlink.setTextColor(getResources().getColor(R.color.grey));
-        } else {
+        }
+        else if(username.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))
+        {
 
 
             getlink.setEnabled(true);
@@ -132,6 +142,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
 
 
+    /**
+     * It adds TextChangedListener
+     * It creates a retrofit way to access fake server and gets data from it
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

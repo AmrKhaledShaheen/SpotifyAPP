@@ -9,6 +9,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+
+/**
+ * The main activity for the Application
+ * @verison 1.0
+ * This is the first screen the user sees
+ */
+
 public class MainActivity extends AppCompatActivity {
 
 
