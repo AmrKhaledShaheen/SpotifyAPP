@@ -29,12 +29,28 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
-
+    /**
+     * EditText for user to write username and password in each one for login request
+     */
     private EditText username,password;
+
+    /**
+     * Button to send request to backend to check if username/password are correct
+     */
     private Button login;
-    private SpannableString spannableString;
+    /**
+     * Call is for fake server it has list of objects (post) which has many variables as username / email / password
+     */
     private Call<List<Post>> call;
+    /**
+     * DataServer is for accessing fake server and to load the file with data in it
+     */
     private DataServer dataServer;
+
+    /**
+     * TextWatcher is to check by every adding letter to check if this can be an email or username and to allow user to click on login button
+     */
+
     private TextWatcher mTextWatcher=new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -51,16 +67,18 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable s) {
             checkFieldsForEmptyValues();
-            if(spannableString.length()>0)
-                username.setText(spannableString);
+
 
         }
     };
 
-    void showpass(View view) {
+    /*void showpass(View view) {
         password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-    }
+    }*/
 
+    /**
+     * checks if username and password EditText are not empty to make login button enabled to be clicked
+     */
     void checkFieldsForEmptyValues() {
         //username.setText(spannableString);
         login=(Button) findViewById(R.id.login_button);
@@ -80,16 +98,27 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * opens the next activity
+     * @see ForgotPasswordActivity
+     * @param view
+     */
     public void forgotpassword(View view)
     {
         Intent intent=new Intent(this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
-    public void email_usernameHighlight(View view)
+    /*public void email_usernameHighlight(View view)
     {
         return;
-    }
+    }*/
 
+    /**
+     * checks if username and password are correct and goes to the next activity
+     * @see
+     * @param view
+     */
     public void checkRequest(View view)
     {
         //String USERNAME="omar";
@@ -175,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         username=(EditText) findViewById(R.id.email_usernameEditText);
         password=(EditText) findViewById(R.id.passwordEditText);
-        spannableString=new SpannableString("");
+        // spannableString=new SpannableString("");
         username.addTextChangedListener(mTextWatcher);
         password.addTextChangedListener(mTextWatcher);
         checkFieldsForEmptyValues();
