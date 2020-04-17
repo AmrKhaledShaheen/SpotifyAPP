@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void checkRequest(View view)
     {
-        System.out.println("5555555555555555555555555555555555555555");
+        
         //String USERNAME="omar";
         //String PASSWORD="omar";
 
