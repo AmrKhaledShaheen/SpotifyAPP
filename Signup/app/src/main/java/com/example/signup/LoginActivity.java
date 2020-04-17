@@ -127,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void checkRequest(View view)
     {
-        
+
         //String USERNAME="omar";
         //String PASSWORD="omar";
 

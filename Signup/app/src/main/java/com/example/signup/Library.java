@@ -84,10 +84,6 @@ public class Library extends AppCompatActivity {
         }
 
     }*/
-    public void openArtist(View view)
-    {
-
-    }
     public void de7k(View view){
         System.out.println("SASDASD");
     }
@@ -183,6 +179,13 @@ public class Library extends AppCompatActivity {
         button.setCompoundDrawables(img,null,null,null);
         button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
         l.addView(button,k);
+    }
+
+    public void chooseArtist(View view)
+    {
+        Button b=(Button) findViewById(R.id.chooseartistButton);
+        Intent intent=new Intent(this, Artist.class);
+        startActivity(intent);
     }
 
 }
