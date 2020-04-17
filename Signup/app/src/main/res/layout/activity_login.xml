@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".LoginActivity">
+
     <EditText
         android:id="@+id/email_usernameEditText"
         android:layout_width="fill_parent"
@@ -17,7 +18,6 @@
         android:ems="10"
         android:focusable="auto"
         android:inputType="textEmailAddress"
-        android:onClick="email_usernameHighlight"
         android:paddingLeft="10dp"
         android:selectAllOnFocus="true"
         android:textColor="#F8F5F5"

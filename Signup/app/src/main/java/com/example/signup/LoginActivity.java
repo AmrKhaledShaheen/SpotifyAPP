@@ -127,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     public void checkRequest(View view)
     {
+        System.out.println("5555555555555555555555555555555555555555");
         //String USERNAME="omar";
         //String PASSWORD="omar";
 
@@ -157,8 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
                             TextView show=(TextView) findViewById(R.id.textView3);
-                            show.setText("Rightttttttttttttt");
-
+                            openHome();
                             return;
                         }
                         else
@@ -208,6 +208,12 @@ public class LoginActivity extends AppCompatActivity {
      * It creates a retrofit way to access fake server and gets data from it
      * @param savedInstanceState
      */
+
+    protected  void openHome()
+    {
+        Intent intent=new Intent(this, Library.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

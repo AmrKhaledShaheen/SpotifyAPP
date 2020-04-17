@@ -60,10 +60,15 @@ public void OpenSecondSignup(View view)
     Fb_button.startAnimation(animation);
 }
 
-
+    /*public void openLibrary()
+    {
+        Intent intent= new Intent(this,Library.class);
+        startActivity(intent);
+    }*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //openLibrary();
     }
 }

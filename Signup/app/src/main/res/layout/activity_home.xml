@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Library">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:background="#5A5757"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_homee"
+            android:onClick="goHome"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43dp" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_search"
+            android:onClick="goSearch"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43dp" />
+
+        <Button
+            android:id="@+id/libraryButton"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_library"
+            android:onClick="goLibrary"
+            android:text="Your Library"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43dp" />
+
+        <Button
+            android:id="@+id/premiumButton"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_spotify"
+            android:onClick="goPremium"
+            android:text="Premium"
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="-43dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You are in Home Page"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.492" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
