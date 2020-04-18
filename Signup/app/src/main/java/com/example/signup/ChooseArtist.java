@@ -2,53 +2,29 @@ package com.example.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.nfc.Tag;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-public class Artist extends AppCompatActivity {
-    /*private TextView artist1;
-    private TextView artist2;
-    private TextView artist3;
-    private TextView artist4;
-    private TextView artist5;
-    private TextView artist6;*/
+public class ChooseArtist extends AppCompatActivity {
+
     private ImageView artist1true;
     private ImageView artist2true;
     private ImageView artist3true;
     private ImageView artist4true;
     private ImageView artist5true;
     private ImageView artist6true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContent(R.layout.activity_artist);
-    }
-
-
-    public void setContent(int id)
-    {
-        setContentView(id);
+        setContentView(R.layout.activity_choose_artist);
         artist1true=(ImageView) findViewById(R.id.artist1true);
         artist2true=(ImageView) findViewById(R.id.artist2true);
         artist3true=(ImageView) findViewById(R.id.artist3true);
         artist4true=(ImageView) findViewById(R.id.artist4true);
         artist5true=(ImageView) findViewById(R.id.artist5true);
         artist6true=(ImageView) findViewById(R.id.artist6true);
-
-
-
-    }
-    public void goSearch(View view)
-    {
-        setContent(R.layout.activity_search);
-    }
-    public void backToArtist(View view)
-    {
-        setContent(R.layout.activity_artist);
     }
 
     public void chooseMe(View view)
@@ -102,13 +78,15 @@ public class Artist extends AppCompatActivity {
         }
     }
 
-    public void saveArtists(View view)
+    public void goSearch(View view)
     {
-        setContent(R.layout.activity_artist1);
+        Intent intent=new Intent(this, Searchartist.class);
+        startActivity(intent);
     }
 
-
-
-
+    public void saveArtists(View view)
+    {
+        return;
+    }
 
 }

@@ -5,12 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".Library">
-
-
+    tools:context=".ArtistsView">
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -29,7 +26,7 @@
             android:onClick="playlistsCall"
             android:text="Playlists"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/whitegrey"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -39,10 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:background="@color/black"
-            android:onClick="openArtistsView"
             android:text="Artists"
             android:textAllCaps="false"
-            android:textColor="@color/whitegrey"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -60,7 +56,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout2"
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:background="#5A5757"
@@ -124,108 +120,45 @@
             tools:layout_editor_absoluteX="-43dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/allplaylistLayout"
-        android:layout_width="fill_parent"
+    <Button
+        android:id="@+id/chooseartistButton"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="192dp"
+        android:background="@drawable/rounded_button_login2"
+        android:onClick="openChooseArtist"
+        android:text="CHOOSE ARTISTS"
+        android:textColor="#121111"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/createplaylistButton"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:background="@color/black"
-            android:drawableLeft="@drawable/ic_plus"
-            android:gravity="left|center_vertical"
-            android:onClick="showCreate"
-            android:shadowColor="#9C27B0"
-            android:text="  Create playlist"
-            android:textAllCaps="false"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/playlistLayout"
+    <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/rounded_button_createplaylist"
-        android:orientation="vertical"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        android:lines="1"
+        android:text="Artists you follow will"
+        android:textColor="#FDFCFC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.294">
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:background="#F1EFEF"
-            android:gravity="center"
-            android:text=" Give your playlist a name."
-            android:textColor="#090909"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/playlistName"
-            android:layout_width="240dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/rounded_button_playlisttextview"
-            android:editable="true"
-            android:ems="10"
-            android:hint="My playlist"
-            android:inputType="textPersonName"
-            android:paddingLeft="10dp"
-            android:textColor="#090909"
-            android:textSize="14sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="1"
-                android:background="#F1EFEF"
-                android:onClick="hidePlaylist"
-                android:text="Cancel"
-                android:textAllCaps="false"
-                android:textColor="#3F51B5" />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="#F1EFEF"
-                android:onClick="createPlaylist"
-                android:text="Create"
-                android:textAllCaps="false"
-                android:textColor="#3F51B5" />
-        </LinearLayout>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="appear here"
+        android:textColor="#FBFAFA"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/chooseartistButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
