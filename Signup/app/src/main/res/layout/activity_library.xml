@@ -125,7 +125,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/allplaylistLayout"
+        android:id="@+id/allplaylistsLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -153,7 +153,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/playlistLayout"
+        android:id="@+id/createplaylistLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"
@@ -167,7 +167,7 @@
         app:layout_constraintVertical_bias="0.294">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/createplaylistTextView"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="20dp"
@@ -180,7 +180,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/playlistName"
+            android:id="@+id/newplaylistEditText"
             android:layout_width="240dp"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
@@ -202,7 +202,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/hideplaylistlinearlayoutButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -215,7 +215,7 @@
                 android:textColor="#3F51B5" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/addplaylistButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

@@ -67,7 +67,7 @@
             app:layout_row="0">
 
             <ImageView
-                android:id="@+id/amrimageView"
+                android:id="@+id/artist3imageView"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
@@ -75,7 +75,7 @@
                 app:srcCompat="@drawable/amr" />
 
             <TextView
-                android:id="@+id/amrtextView"
+                android:id="@+id/artist3textView"
                 android:layout_width="110dp"
                 android:layout_height="20dp"
                 android:gravity="center"
@@ -93,7 +93,7 @@
             app:layout_row="0">
 
             <ImageView
-                android:id="@+id/waelimageView"
+                android:id="@+id/artist2imageView"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
@@ -101,7 +101,7 @@
                 app:srcCompat="@drawable/kafoury" />
 
             <TextView
-                android:id="@+id/waeltextView"
+                android:id="@+id/artist2textView"
                 android:layout_width="110dp"
                 android:layout_height="20dp"
                 android:gravity="center"
@@ -119,7 +119,7 @@
             app:layout_row="0">
 
             <ImageView
-                android:id="@+id/adamimageView"
+                android:id="@+id/artist1imageView"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
@@ -128,7 +128,7 @@
 
 
             <TextView
-                android:id="@+id/adamtextView"
+                android:id="@+id/artist1textView"
                 android:layout_width="110dp"
                 android:layout_height="20dp"
                 android:gravity="center"
@@ -144,7 +144,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/tamerimageView"
+                android:id="@+id/artist4imageView"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
@@ -152,7 +152,7 @@
                 app:srcCompat="@drawable/tamer" />
 
             <TextView
-                android:id="@+id/tamertextView"
+                android:id="@+id/artist4textView"
                 android:layout_width="110dp"
                 android:layout_height="20dp"
                 android:gravity="center"
@@ -276,12 +276,12 @@
         app:srcCompat="@drawable/truesign" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/savelikedartistsButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
         android:background="@drawable/rounded_button_login2"
-        android:onClick="saveArtists"
+        android:onClick="savelikedArtists"
         android:text="DONE"
         android:textAllCaps="true"
         android:textColor="@color/black"

@@ -123,7 +123,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/chooseartistButton"
+        android:id="@+id/chooseartists_0artistsButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="192dp"
@@ -137,7 +137,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lines="1"
@@ -145,13 +145,13 @@
         android:textColor="#FDFCFC"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -159,7 +159,7 @@
         android:textColor="#FBFAFA"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/chooseartistButton"
+        app:layout_constraintBottom_toTopOf="@+id/chooseartists_0artistsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

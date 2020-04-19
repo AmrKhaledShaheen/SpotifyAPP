@@ -17,22 +17,11 @@ import java.util.List;
 
 public class Library extends AppCompatActivity {
 
-    private Button playlistsButton;
-    private Button artistsButton;
-    private Button albums;
-    private Button homeButton;
-    private Button searchButton;
-    private Button libraryButton;
-    private Button premiumButton;
+    private Button playlistsButton,artistsButton,albums,homeButton,searchButton,libraryButton,premiumButton,createplaylistButton,addplaylistButton;
     private int k=1;
-    Drawable spotify1;
-    Drawable spotify2;
-    Drawable library1;
-    Drawable library2;
-    Drawable home1;
-    Drawable home2;
-    Drawable search1;
-    Drawable search2;
+    private EditText newplaylistEditText;
+    LinearLayout createplaylistLinearLayout,allplaylistsLinearLayout;
+    Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
     Drawable[] drawableArray={spotify1,spotify2,search1,search2,home1,home2,library1,library2};
     Button [] buttonsArray={homeButton,libraryButton,searchButton,premiumButton};
 
@@ -40,6 +29,18 @@ public class Library extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
+
+        ///////// Create playlist linear layout and its children
+        createplaylistLinearLayout=(LinearLayout) findViewById(R.id.createplaylistLinearLayout);
+        addplaylistButton=(Button) findViewById(R.id.addplaylistButton);
+        newplaylistEditText=(EditText) findViewById(R.id.newplaylistEditText);
+
+        //////// all created playlists linear layout and its children
+        allplaylistsLinearLayout=(LinearLayout) findViewById(R.id.allplaylistsLayout);
+        createplaylistButton=(Button) findViewById(R.id.createplaylistButton);
+
+
+
         playlistsButton=(Button) findViewById(R.id.playlistButton);
         artistsButton=(Button) findViewById(R.id.artistsButton);
         albums=(Button) findViewById(R.id.albumsButton);
@@ -162,8 +163,8 @@ public class Library extends AppCompatActivity {
     }
     public void showCreate(View view)
     {
-        LinearLayout linearLayout=(LinearLayout) findViewById(R.id.playlistLayout);
-        linearLayout.setVisibility(View.VISIBLE);
+
+        createplaylistLinearLayout.setVisibility(View.VISIBLE);
     }
     public void resetAll()
     {
@@ -178,30 +179,27 @@ public class Library extends AppCompatActivity {
     }
     public void hidePlaylist(View view)
     {
-        LinearLayout linearLayout=(LinearLayout) findViewById(R.id.playlistLayout);
-        linearLayout.setVisibility(View.INVISIBLE);
+
+        createplaylistLinearLayout.setVisibility(View.INVISIBLE);
     }
     public void createPlaylist(View view)
     {
-        LinearLayout linearLayout=(LinearLayout) findViewById(R.id.playlistLayout);
-        linearLayout.setVisibility(View.INVISIBLE);
+        createplaylistLinearLayout.setVisibility(View.INVISIBLE);
         Button button=new Button(this);
-        EditText editText=(EditText) findViewById(R.id.playlistName);
-        Button playlist=(Button) findViewById(R.id.createplaylistButton);
+
         button.setTextSize(22);
         button.setAllCaps(false);
-        button.setText("  " + editText.getText().toString());
-        editText.setText("");
+        button.setText("  " + newplaylistEditText.getText().toString());
+        newplaylistEditText.setText("");
         //button.setWidth(playlist.getWidth());
         //button.setPadding(10,0,0,0);
         button.setBackgroundColor(Color.BLACK);
         Drawable img=getResources().getDrawable(R.drawable.ic_music);
         img.setBounds(0,0,182,182);
-        LinearLayout l=(LinearLayout) findViewById(R.id.allplaylistLayout);
         LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         button.setCompoundDrawables(img,null,null,null);
         button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-        l.addView(button,k);
+        allplaylistsLinearLayout.addView(button,k);
     }
     public void openArtistsView(View view)
     {
