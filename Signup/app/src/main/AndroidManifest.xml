@@ -11,21 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SongDetails"
+            android:label=" "
+            />
+
+        <activity
+            android:name=".ArtistProfile"
+            android:label=" "
+            android:parentActivityName=".ArtistsView" />
+        <activity
             android:name=".AlbumsView"
-            android:label="Music"></activity>
+            android:label="Music" />
         <activity
             android:name=".ChooseArtist"
             android:label=" "
-            android:parentActivityName=".ArtistsView"
-            />
+            android:parentActivityName=".ArtistsView" />
         <activity
             android:name=".ArtistsView"
-            android:label="Music"
-            />
+            android:label="Music" />
         <activity
             android:name=".Searchartist"
             android:label=" "
-            android:parentActivityName=".ChooseArtist"/>
+            android:parentActivityName=".ChooseArtist" />
         <activity
             android:name=".Artist"
             android:label=" "

@@ -184,11 +184,29 @@ public class ArtistsView extends AppCompatActivity {
                 button.setCompoundDrawables(img,null,null,null);
                 button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
                 System.out.println("DONE"+i);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showProfile(v);
+                    }
+                });
                 allartistsLinearLayout.addView(button,k);
                 //Button btn=getIntent().getParcelableExtra("artists"+i+"Button");
                 //allartistsLinearLayout.addView(btn);
             }
         }
+
+    }
+    public void showProfile(View view)
+    {
+
+        Intent intent=new Intent(this,ArtistProfile.class);
+
+        Button btn=(Button) view;
+        String artistname=btn.getText().toString();
+        intent.putExtra("artistName",artistname);
+        System.out.println(artistname);
+        startActivity(intent);
 
     }
 }
