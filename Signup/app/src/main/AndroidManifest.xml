@@ -45,7 +45,6 @@
             android:name=".Library"
             android:label="Music" />
         <activity
-        <activity
             android:name=".Premiumm"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
@@ -60,7 +59,7 @@
             />
 
         <activity
-            android:name=".ArtistProfile"
+            android:name=".ArtistProfile"/>
         <activity
             android:name=".LoginActivity"
             android:label=" "
