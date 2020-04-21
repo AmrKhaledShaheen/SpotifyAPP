@@ -44,4 +44,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/songimageView" />
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/currentsongtimeTextView"
+            android:layout_width="54dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:text="0:00"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/playerSeekBar"
+            android:layout_width="271dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="116dp" />
+
+        <TextView
+            android:id="@+id/songtimeTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="0:00"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
