@@ -4,21 +4,25 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SongDetails"
+            android:name=".Creditcard"
             android:label=" "
+            android:parentActivityName=".Premiumm"
             />
-
-        <activity
-            android:name=".ArtistProfile"
-            android:label=" "
-            android:parentActivityName=".ArtistsView" />
         <activity
             android:name=".AlbumsView"
             android:label="Music" />
@@ -41,13 +45,27 @@
             android:name=".Library"
             android:label="Music" />
         <activity
+        <activity
+            android:name=".Premiumm"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
             android:name=".ForgotPasswordActivity"
             android:label=" "
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".LoginActivity"
+
+        />
+        <activity
+            android:name=".SongDetails"
+            android:label=" "
+            />
+
+        <activity
+            android:name=".ArtistProfile"
         <activity
             android:name=".LoginActivity"
             android:label=" "
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            />
         <activity
             android:name=".Createfinal"
             android:label="              Create account"
@@ -73,7 +91,6 @@
             android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

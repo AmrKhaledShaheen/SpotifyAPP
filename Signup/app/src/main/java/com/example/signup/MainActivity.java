@@ -58,6 +58,8 @@ public void OpenSecondSignup(View view)
     Button Fb_button=(Button)findViewById(R.id.Facebook_button);
     Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
     Fb_button.startAnimation(animation);
+    Intent intent= new Intent(this,Premiumm.class);
+    startActivity(intent);
 }
 
     /*public void openLibrary()

@@ -33,12 +33,9 @@ public class Createfinal extends AppCompatActivity {
 
     public void Createbutton (View view)
     {
-
         Button CreateButton=(Button)findViewById(R.id.Createbutton);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
         CreateButton.startAnimation(animation);
-
-
     }
 
     /**

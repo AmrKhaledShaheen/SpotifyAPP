@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/yrb"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/yrb"
+        tools:ignore="NotSibling">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/getpremium_button"
+        android:layout_width="match_parent"
+        android:layout_height="450sp"
+        android:background="@drawable/gradient_premium" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_marginTop="170sp"
+        tools:context=".Premiumm">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:clipToPadding="false"
+            android:foregroundGravity="center"
+            android:overScrollMode="never"></androidx.viewpager.widget.ViewPager>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n \n       Try Premium free for 1 \n                      month"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FAF9F9"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="450sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="350sp"
+        >
+
+        <Button
+            android:id="@+id/GetPremium_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120sp"
+            android:layout_marginRight="120sp"
+            android:background="@drawable/button_create"
+            android:onClick="GetPremium_button"
+            android:text="GET PREMIUM"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blackGrey"
+            android:text="       Only EGP 49.99/month after offer period. Cancel anytime"
+            android:layout_marginTop="55sp">
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="450sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginBottom="15sp"
+        android:background="@drawable/gradient_premium2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:text="Premium\nIndividual "
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="320sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginRight="15sp"
+            android:text="Free"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="40sp"
+            android:layout_marginRight="15sp"
+            android:text="FOR 1 MONTH"
+            android:textColor="#DDC4C4"
+            android:textSize="10sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95sp"
+            android:layout_marginTop="70sp"
+            android:layout_marginRight="15sp"
+            android:text="Ad-free music . Download to listen\n  offline . Unlimited skips . On-\ndemand playback . Cancel anytime "
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"></TextView>
+
+        <Button
+            android:id="@+id/Try_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95sp"
+            android:layout_marginTop="130sp"
+            android:layout_marginRight="95sp"
+            android:background="@drawable/button_create"
+            android:onClick="Try_button"
+            android:text="TRY 1 MONTH FREE"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="190sp"
+            android:text="Only EGP 49.99/month after offer period. Cancel anytime"
+            android:textColor="@color/Grayyy"></TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_marginTop="750sp"
+        android:background="@color/black">
+    </RelativeLayout>
+</RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="75sp"
+        android:background="#5A5757"
+        android:layout_marginTop="590sp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_homee"
+            android:onClick="goHome"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_search"
+            android:onClick="goSearch"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/libraryButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_library"
+            android:text="Your Library"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/premiumButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_spotify"
+            android:onClick="goPremium"
+            android:text="Premium"
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="-43sp" />
+    </LinearLayout>
+</RelativeLayout>
