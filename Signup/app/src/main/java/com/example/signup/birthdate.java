@@ -1,6 +1,8 @@
 package com.example.signup;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,9 +72,6 @@ public class birthdate extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_birthdate);
-
-
-
         DatePicker datePicker = (DatePicker) findViewById(R.id.datepicker);
         final Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());

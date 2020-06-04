@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_homepage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\n           Here are some playlist based on\n                          your music taste.\n                                                                                 ."
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/relativeLayout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Made for you"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/FirstImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="first_image_clicked" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0sp"
+            android:text="Amr Diab, Mohamed Hamaki, Mahmoud\n                    Ellisely and more"
+            android:textColor="@color/whitegrey"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Recommended for you"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Because you like"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/SecondImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="SecondImageLiked" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Because you like"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ThirdImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="ThirdImageLiked"></ImageView>
+                </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_marginTop="1185sp"
+            android:background="@color/black"></RelativeLayout>
+</RelativeLayout>
+</ScrollView>
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="75sp"
+        android:background="#5A5757"
+        android:layout_marginTop="590sp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_homee"
+            android:onClick="goHome"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_search"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/libraryButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_library"
+            android:text="Your Library"
+            android:onClick="goLibrary"
+            android:textAllCaps="false"
+            android:textColor="#d3d3d3"
+            tools:layout_editor_absoluteX="-43sp" />
+
+        <Button
+            android:id="@+id/premiumButton"
+            android:layout_width="100sp"
+            android:layout_height="70sp"
+            android:layout_marginTop="5sp"
+            android:layout_weight="1"
+            android:background="#5A5757"
+            android:drawableTop="@drawable/ic_spotify"
+            android:onClick="goPremium"
+            android:text="Premium"
+            android:textAllCaps="false"
+            tools:layout_editor_absoluteX="-43sp" />
+    </LinearLayout>
+</RelativeLayout>

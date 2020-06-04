@@ -113,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         Intent intent=new Intent(this, ForgotPasswordActivity.class);
         startActivity(intent);
+
     }
     /*public void email_usernameHighlight(View view)
     {
@@ -206,13 +207,17 @@ public class LoginActivity extends AppCompatActivity {
     /**
      * It adds TextChangedListener
      * It creates a retrofit way to access fake server and gets data from it
-     * @param savedInstanceState
+    // * @param savedInstanceState
      */
 
     protected  void openHome()
     {
+
         Intent intent=new Intent(this, Library.class);
         startActivity(intent);
+        finish();
+        Shared shared=new Shared(getApplicationContext());
+        shared.SecondTime();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -17,6 +17,9 @@ public class Premiumm extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Creditcard.class);
         startActivity(intent);
+        finish();
+        Shared shared=new Shared(getApplicationContext());
+        shared.Logout();
     }
     public void Try_button(View view)
     {

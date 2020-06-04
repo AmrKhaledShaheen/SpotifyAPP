@@ -15,6 +15,14 @@ public class Post {
     private String birthdate;
     private String gender;
 
+    public Post(String email, String username, String password, String birthdate, String gender) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.birthdate = birthdate;
+        this.gender = gender;
+    }
+
     public String getEmail() {
         return email;
     }

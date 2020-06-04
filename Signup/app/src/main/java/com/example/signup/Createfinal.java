@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -29,14 +32,9 @@ import android.widget.Toast;
  * @version 1.0
  */
 public class Createfinal extends AppCompatActivity {
+SharedPreferences sharedPreferences;
 
 
-    public void Createbutton (View view)
-    {
-        Button CreateButton=(Button)findViewById(R.id.Createbutton);
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
-        CreateButton.startAnimation(animation);
-    }
 
     /**
      * creates textChangedListener
@@ -52,7 +50,6 @@ public class Createfinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createfinal);
         EditText Nameedittext=(EditText)findViewById(R.id.Nameedittext);
-
         Nameedittext.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -136,5 +133,20 @@ public class Createfinal extends AppCompatActivity {
         ss2.setSpan(t33,155,169,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         Privacy.setText(ss2);
         Privacy.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+    public void Createbutton (View view)
+    {
+        Button CreateButton=(Button)findViewById(R.id.Createbutton);
+        EditText Nameedittext=(EditText)findViewById(R.id.Nameedittext);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
+        CreateButton.startAnimation(animation);
+        //send username
+        sharedPreferences=getSharedPreferences("username", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putString("username",Nameedittext.getText().toString());
+        editor.apply();
+        ///Open new window
+        Intent intent = new Intent(getApplicationContext(), HomePage.class);
+        startActivity(intent);
     }
 }

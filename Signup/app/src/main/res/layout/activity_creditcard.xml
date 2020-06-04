@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Start_button"
         android:layout_width="191dp"
         android:layout_height="58dp"
         android:background="@drawable/rounded_button_signup"

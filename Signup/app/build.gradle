@@ -41,4 +41,10 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     //circleImageView
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:25.0.1'
+    //Add those line in dependencies
+    implementation files('libs/activation.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/mail.jar')
 }

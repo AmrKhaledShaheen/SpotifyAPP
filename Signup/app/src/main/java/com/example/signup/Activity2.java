@@ -1,7 +1,9 @@
 package com.example.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -31,6 +33,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class Activity2 extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    DataServer dataServer;
     /**
      * emailPattern is to check validation of right way for an email
      */
@@ -74,14 +78,13 @@ public class Activity2 extends AppCompatActivity {
         Button buttonNext=(Button)findViewById(R.id.Next_first);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
         buttonNext.startAnimation(animation);
-
         if (editTextEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\\.+com+"))
         {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl("https://my-json-server.typicode.com/AmrKhaledShaheen/SpotifyAPP/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            DataServer dataServer = retrofit.create(DataServer.class);
+             dataServer = retrofit.create(DataServer.class);
             Call<List<Post>> call= dataServer.getPosts();
             call.enqueue(new Callback<List<Post>>() {
                 @Override
@@ -145,10 +148,14 @@ public class Activity2 extends AppCompatActivity {
             startActivity(intent);
         }
         if(y=="0") {
-
             Toast.makeText(this, editTextEmail.getText().toString() +"\n"+"sent to backend", Toast.LENGTH_SHORT).show();
+            //send the email
+            sharedPreferences=getSharedPreferences("email", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor= sharedPreferences.edit();
+            editor.putString("email",editTextEmail.getText().toString());
+            editor.apply();
             ///Open new window
-            Intent intent = new Intent(this, CreatePass.class);
+            Intent intent = new Intent(getApplicationContext(), CreatePass.class);
             startActivity(intent);
             /////
         }

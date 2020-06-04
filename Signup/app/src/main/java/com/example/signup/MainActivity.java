@@ -2,8 +2,11 @@ package com.example.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -58,7 +61,7 @@ public void OpenSecondSignup(View view)
     Button Fb_button=(Button)findViewById(R.id.Facebook_button);
     Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
     Fb_button.startAnimation(animation);
-    Intent intent= new Intent(this,Premiumm.class);
+    Intent intent= new Intent(this,HomePage.class);
     startActivity(intent);
 }
 
@@ -71,6 +74,12 @@ public void OpenSecondSignup(View view)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //openLibrary();
+
     }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        Shared shared=new Shared(getApplicationContext());
+//        shared.FirstTime();
+//    }
 }

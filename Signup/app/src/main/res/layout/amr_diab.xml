@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Singers_Songs">
+    <RelativeLayout
+        android:id="@+id/upper_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_singer_songs"
+        >
+        <ImageView
+            android:id="@+id/artist3imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="250sp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/amr"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/upper_layout"
+        android:background="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:text=" Maak albi"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+        <Button
+            android:id="@+id/play_maak_albi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="30sp"
+            android:text="Play"
+            android:background="@drawable/rounded_button_signup"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90sp"
+            android:text=" Awedony"
+            android:textSize="30sp"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/play_Awedony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="90sp"
+            android:text="Play"
+            android:background="@drawable/rounded_button_signup"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150sp"
+            android:text=" Amreen"
+            android:textSize="30sp"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/play_amreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300sp"
+            android:layout_marginTop="150sp"
+            android:text="Play"
+            android:background="@drawable/rounded_button_signup"
+            />
+    </RelativeLayout>
+</RelativeLayout>

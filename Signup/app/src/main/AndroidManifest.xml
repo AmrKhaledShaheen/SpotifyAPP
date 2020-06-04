@@ -9,8 +9,7 @@
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true"
-        android:xlargeScreens="true"
-        />
+        android:xlargeScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -20,11 +19,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Main2Activity"></activity>
+        <activity
+            android:name=".Singers_Songs"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".HomePage"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".Creditcard"
             android:label=" "
-            android:parentActivityName=".Premiumm"
-            />
+            android:parentActivityName=".Premiumm" />
         <activity
             android:name=".AlbumsView"
             android:label="Music" />
@@ -52,21 +57,15 @@
         <activity
             android:name=".ForgotPasswordActivity"
             android:label=" "
-            android:parentActivityName=".LoginActivity"
-
-        />
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".SongDetails"
-            android:label=" "
-            />
-
-        <activity
-            android:name=".ArtistProfile"/>
+            android:label=" " />
+        <activity android:name=".ArtistProfile" />
         <activity
             android:name=".LoginActivity"
             android:label=" "
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Createfinal"
             android:label="              Create account"
