@@ -3,6 +3,7 @@ package com.example.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,8 +13,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class Library extends AppCompatActivity {
 
@@ -24,6 +33,15 @@ public class Library extends AppCompatActivity {
     Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
     Drawable[] drawableArray={spotify1,spotify2,search1,search2,home1,home2,library1,library2};
     Button [] buttonsArray={homeButton,libraryButton,searchButton,premiumButton};
+    private DataServer dataServer;
+
+    /// SharedPrefs /////
+    public static final String SHARED_PREFS="sharedPrefs";
+    public static final String playlists_Number="playlists_Number";
+    private int playlists_count;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +85,14 @@ public class Library extends AppCompatActivity {
         search1.setBounds(0,0,130,130);
         libraryButton.setTextColor(Color.WHITE);
         libraryButton.setCompoundDrawables(null,library2,null,null);
+        /*Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://my-json-server.typicode.com/AmrKhaledShaheen/SpotifyAPP/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-
+        dataServer=retrofit.create(DataServer.class);
+        createPost();*/
+        loadData();
     }
     public void setContent(int id)
     {
@@ -184,12 +208,14 @@ public class Library extends AppCompatActivity {
     }
     public void createPlaylist(View view)
     {
+        String koko;
         createplaylistLinearLayout.setVisibility(View.INVISIBLE);
         Button button=new Button(this);
 
         button.setTextSize(22);
         button.setAllCaps(false);
         button.setText("  " + newplaylistEditText.getText().toString());
+        koko=newplaylistEditText.getText().toString();
         newplaylistEditText.setText("");
         //button.setWidth(playlist.getWidth());
         //button.setPadding(10,0,0,0);
@@ -200,6 +226,8 @@ public class Library extends AppCompatActivity {
         button.setCompoundDrawables(img,null,null,null);
         button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
         allplaylistsLinearLayout.addView(button,k);
+        playlists_count++;
+        saveData(koko);
     }
     public void openArtistsView(View view)
     {
@@ -207,11 +235,68 @@ public class Library extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void saveData(String koko)
+    {
+        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putInt(playlists_Number,playlists_count);
+        editor.putString("playlist"+playlists_count,koko);
+        editor.apply();
+    }
+
+    public void loadData() {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        playlists_count = sharedPreferences.getInt(playlists_Number, 0);
+
+        System.out.println(playlists_count);
+        for (int i = 1; i <= playlists_count; i++)
+        {
+            String playlistName=sharedPreferences.getString("playlist"+i,"koko");
+            Button button=new Button(this);
+
+            button.setTextSize(22);
+            button.setAllCaps(false);
+            button.setText("  " + playlistName);
+
+            //button.setWidth(playlist.getWidth());
+            //button.setPadding(10,0,0,0);
+            button.setBackgroundColor(Color.BLACK);
+            Drawable img=getResources().getDrawable(R.drawable.ic_music);
+            img.setBounds(0,0,182,182);
+            LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            button.setCompoundDrawables(img,null,null,null);
+            button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+            allplaylistsLinearLayout.addView(button,k);
+        }
+    }
+
+
+
     /*public void chooseArtist(View view)
     {
         Button b=(Button) findViewById(R.id.chooseartistButton);
         Intent intent=new Intent(this, Artist.class);
         startActivity(intent);
     }*/
+   /* private void createPost(){
+        Post post =new Post("asfg","fasdads","dsadsaddas","dsadsasda","dssdsdsd");
+        Call<Post> call=dataServer.createPost(post);
+        call.enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                if(!response.isSuccessful()){
+                    //
+                    return;
+                }
+                Post postResponse=response.body();
+            }
 
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
+
+            }
+        });
+
+    }*/
 }

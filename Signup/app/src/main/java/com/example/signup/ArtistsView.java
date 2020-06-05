@@ -3,6 +3,7 @@ package com.example.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -20,10 +21,14 @@ public class ArtistsView extends AppCompatActivity {
     private int k=1;
     private int numberofartists;
     Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
         setContentView(R.layout.activity_artists_view);
 
         ///////////0 artist mode
@@ -64,7 +69,92 @@ public class ArtistsView extends AppCompatActivity {
         search1.setBounds(0,0,130,130);
         libraryButton.setTextColor(Color.WHITE);
         libraryButton.setCompoundDrawables(null,library2,null,null);
-        checknumberofartists();
+        loadData();
+        //checknumberofartists();
+    }
+    public void loadData()
+    {
+        numberofartists=sharedPreferences.getInt("numberofartists",0);
+
+        System.out.println(numberofartists);
+        LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        k.setMargins(0,30,0,0);
+        Drawable img=getResources().getDrawable(R.drawable.kafoury);
+        if(numberofartists==0)
+        {
+
+            allartistsLinearLayout.setVisibility(View.INVISIBLE);
+            textView1.setVisibility(View.VISIBLE);
+            textView2.setVisibility(View.VISIBLE);
+            chooseartists_0artistsButton.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            Button btn=new Button(this);
+            btn.setTextSize(22);
+            btn.setPadding(40,0,0,0);
+            btn.setAllCaps(false);
+            btn.setText("  Choose artists");
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseArtist();
+                }
+            });
+            img=getResources().getDrawable(R.drawable.roundedplus);
+            btn.setBackgroundColor(Color.BLACK);
+            img.setBounds(0,0,160,160);
+            btn.setCompoundDrawables(img,null,null,null);
+            btn.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+            allartistsLinearLayout.addView(btn,k);
+            allartistsLinearLayout.setVisibility(View.VISIBLE);
+            textView1.setVisibility(View.INVISIBLE);
+            textView2.setVisibility(View.INVISIBLE);
+            chooseartists_0artistsButton.setVisibility(View.INVISIBLE);
+
+            for(int i=1;i<=numberofartists;i++)
+            {
+                String name=sharedPreferences.getString("artist"+i,"sayed");
+                System.out.println(name);
+                Button button=new Button(this);
+
+                if(name.equals("Adam Levine"))
+                {
+                    img=getResources().getDrawable(R.drawable.adam);
+                }
+                else if(name.equals("Wael Kfoury"))
+                {
+                    img=getResources().getDrawable(R.drawable.kafoury);
+                }
+                else if(name.equals("Amr Diab"))
+                {
+                    img=getResources().getDrawable(R.drawable.amr);
+                }
+                else if(name.equals("Tamer Hosny"))
+                {
+                    img=getResources().getDrawable(R.drawable.tamer);
+                }
+                img.setBounds(0,0,160,160);
+                button.setTextSize(22);
+                button.setPadding(40,0,0,0);
+                button.setAllCaps(false);
+                button.setText("  "+name);
+                button.setBackgroundColor(Color.BLACK);
+                button.setCompoundDrawables(img,null,null,null);
+                button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+                System.out.println("DONE"+i);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showProfile(v);
+                    }
+                });
+                allartistsLinearLayout.addView(button,k);
+                //Button btn=getIntent().getParcelableExtra("artists"+i+"Button");
+                //allartistsLinearLayout.addView(btn);
+            }
+        }
+
     }
     public void openChooseArtist(View view)
     {
@@ -204,7 +294,9 @@ public class ArtistsView extends AppCompatActivity {
 
         Button btn=(Button) view;
         String artistname=btn.getText().toString();
-        intent.putExtra("artistName",artistname);
+        editor.putString("artistName",artistname);
+        editor.apply();
+        //intent.putExtra("artistName",artistname);
         System.out.println(artistname);
         startActivity(intent);
 

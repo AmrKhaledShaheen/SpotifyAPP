@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class Creditcard extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-public boolean premium=false;
+    public boolean premium=false;
     public Button Start_button;
     public void yrb(View view)
     {

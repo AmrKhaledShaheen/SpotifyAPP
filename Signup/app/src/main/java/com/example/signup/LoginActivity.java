@@ -3,6 +3,7 @@ package com.example.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -213,15 +214,17 @@ public class LoginActivity extends AppCompatActivity {
     protected  void openHome()
     {
 
-        Intent intent=new Intent(this, Library.class);
+        Intent intent=new Intent(this, HomePage.class);
         startActivity(intent);
-        finish();
+        /*finish();
         Shared shared=new Shared(getApplicationContext());
-        shared.SecondTime();
+        shared.SecondTime();*/
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences preferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        preferences.edit().clear().commit();
         setContentView(R.layout.activity_login);
         username=(EditText) findViewById(R.id.email_usernameEditText);
         password=(EditText) findViewById(R.id.passwordEditText);

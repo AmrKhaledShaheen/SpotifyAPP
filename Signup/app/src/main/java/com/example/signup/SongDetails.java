@@ -3,6 +3,7 @@ package com.example.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ public class SongDetails extends AppCompatActivity {
 
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +41,8 @@ public class SongDetails extends AppCompatActivity {
         play_pause_imageView=(ImageView) findViewById(R.id.play_pause_imageView);
         mediaPlayer=new MediaPlayer();
         playerSeekBar.setMax(100);
-
+        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
         playerSeekBar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -100,7 +104,8 @@ public class SongDetails extends AppCompatActivity {
 
     public void showsongsDetails()
     {
-        songName=getIntent().getStringExtra("songName");
+        //songName=getIntent().getStringExtra("songName");
+        songName=sharedPreferences.getString("songName","not found");
         //mediaPlayer= MediaPlayer.create(this,R.raw.laugh);
         audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
         if(songName.equals("  Sugar"))
@@ -114,6 +119,18 @@ public class SongDetails extends AppCompatActivity {
             songImageView.setImageDrawable(getResources().getDrawable(R.drawable.maps));
             songnameTextView.setText(songName);
             prepareMediaPlayer("http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3");
+        }
+        else if(songName.equals("  Zaymanty"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.zaymanty));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/AmrDiab/2020/10-Zay.Manty.mp3");
+        }
+        else if(songName.equals("  Bahebu"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.bahebu));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/AmrDiab/2020/13-Bahebo.mp3");
         }
     }
     public void play_pause(View view)
