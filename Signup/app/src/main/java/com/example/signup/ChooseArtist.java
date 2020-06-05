@@ -98,6 +98,7 @@ public class ChooseArtist extends AppCompatActivity {
         editor.apply();
         System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         System.out.println(count);
+        System.out.println(sharedPreferences.getString("artist2","sdsd"));
     }
     public void loadData()
     {

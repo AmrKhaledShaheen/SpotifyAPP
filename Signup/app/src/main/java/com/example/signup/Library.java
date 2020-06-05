@@ -234,7 +234,8 @@ public class Library extends AppCompatActivity {
     }
     public void showPlaylist()
     {
-
+        Intent intent=new Intent(this, PlaylistDetails.class);
+        startActivity(intent);
     }
     public void openArtistsView(View view)
     {

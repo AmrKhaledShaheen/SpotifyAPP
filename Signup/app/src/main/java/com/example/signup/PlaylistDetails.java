@@ -2,6 +2,7 @@ package com.example.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ public class PlaylistDetails extends AppCompatActivity {
     }
     public void goToAllSongs(View view)
     {
-
+        Intent intent=new Intent(this, AllSongs.class);
+        startActivity(intent);
     }
 }

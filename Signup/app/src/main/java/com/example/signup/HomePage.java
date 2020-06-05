@@ -21,6 +21,9 @@ public class HomePage extends AppCompatActivity {
 String img3_singer,img4_singer,img5_singer,img6_singer="";
 Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
 private Button homeButton,searchButton,libraryButton,premiumButton;
+private SharedPreferences sharedPreferences;
+private SharedPreferences.Editor editor;
+private int numberofartists;
 public void img3_clicked(View view)
 {
     if(img3_singer=="amr")
@@ -319,7 +322,10 @@ public void img3_clicked(View view)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
+        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        numberofartists=sharedPreferences.getInt("numberofartists",0);
+        System.out.println(numberofartists);
         /////////////////////////////////////// Home betnawar////////////////////////////////
 
         homeButton=(Button) findViewById(R.id.homeButton);
@@ -367,10 +373,32 @@ public void img3_clicked(View view)
         img6.setVisibility(View.GONE);
         /////////////////////////////////////////////////////////////////
         List namesoflikedB = new ArrayList<String>();
-        namesoflikedB.add("Amr_Diab");
-        namesoflikedB.add("Mohamed_Hamaki");
-        namesoflikedB.add("Tamer_hosny");
-        namesoflikedB.add("Nancy_ajram");
+        for(int i=0;i<numberofartists;i++)
+        {
+            int count=i+1;
+            String name=sharedPreferences.getString("artist"+count,"not found");
+            System.out.println(name);
+            switch(name)
+            {
+                case "Amr Diab":
+                    break;
+                case "Adam Levine":
+                    break;
+                case "Nancy Ajram":
+                    break;
+                case "Wael Kfoury":
+                    break;
+                case "Tamer Hosny":
+                    break;
+                case "Hamaki":
+                    break;
+
+            }
+            namesoflikedB.add("Amr_Diab");
+            namesoflikedB.add("Mohamed_Hamaki");
+            namesoflikedB.add("Tamer_hosny");
+            namesoflikedB.add("Nancy_ajram");
+        }
 
         ImageView x = null;
         yrab(x,namesoflikedB);

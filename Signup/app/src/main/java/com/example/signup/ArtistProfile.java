@@ -20,7 +20,7 @@ public class ArtistProfile extends AppCompatActivity {
     private String [] tamerSongs={"Wanta maaya","Helw elmakan"};
     private String [] nancySongs={"EL OMR","LYA"};
     private String [] hamakiSongs={"Ya Sattar","We A3mal Eih"};
-    private String [] waelSongs={"1","2"};
+    private String [] waelSongs={"wael1","wael2"};
     private ImageView artistimage;
     private TextView artistname;
     private LinearLayout artistsongsLinearLayout;

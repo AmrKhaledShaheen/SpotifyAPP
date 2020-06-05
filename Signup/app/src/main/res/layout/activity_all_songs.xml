@@ -8,7 +8,7 @@
     tools:context=".AllSongs">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView_songs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -24,25 +24,28 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="310dp"
+        android:layout_height="465dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView_songs"
         app:layout_constraintVertical_bias="0.016">
 
         <LinearLayout
-            android:id="@+id/playlistsongsLinearLayout"
-            android:layout_width="fill_parent"
+            android:id="@+id/allsongsLinearLayout"
+            android:layout_width="409dp"
             android:layout_height="wrap_content"
+
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/artistnametextView"/>
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="90dp">
+
+        </LinearLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
