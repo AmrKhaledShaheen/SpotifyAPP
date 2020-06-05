@@ -32,15 +32,15 @@
             android:text=" Maak albi"
             android:textColor="@color/white"
             android:textSize="30sp" />
+
         <Button
             android:id="@+id/play_maak_albi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="30sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,15 +49,15 @@
             android:text=" Awedony"
             android:textSize="30sp"
             android:textColor="@color/white"/>
+
         <Button
             android:id="@+id/play_Awedony"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="90sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO " />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,14 +65,14 @@
             android:text=" Amreen"
             android:textSize="30sp"
             android:textColor="@color/white"/>
+
         <Button
             android:id="@+id/play_amreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="150sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO " />
     </RelativeLayout>
 </RelativeLayout>

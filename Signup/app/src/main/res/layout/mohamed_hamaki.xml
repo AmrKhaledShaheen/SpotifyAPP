@@ -32,15 +32,15 @@
             android:text=" Wahda Wahda"
             android:textColor="@color/white"
             android:textSize="30sp" />
+
         <Button
             android:id="@+id/play_wahda_wahda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="30sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,15 +49,15 @@
             android:text=" Mabalash"
             android:textSize="30sp"
             android:textColor="@color/white"/>
+
         <Button
             android:id="@+id/play_mabalash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="90sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,14 +65,14 @@
             android:text=" Mel Bedaya"
             android:textSize="30sp"
             android:textColor="@color/white"/>
+
         <Button
             android:id="@+id/play_mel_bedaya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="150sp"
-            android:text="Play"
             android:background="@drawable/rounded_button_signup"
-            />
+            android:text="GO" />
     </RelativeLayout>
 </RelativeLayout>

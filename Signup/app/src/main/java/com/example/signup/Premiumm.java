@@ -26,7 +26,23 @@ public class Premiumm extends AppCompatActivity {
         Intent intent = new Intent(this, Creditcard.class);
         startActivity(intent);
     }
-
+    ///////////////////////////////////////////Toolbar
+    public void goHome(View view)
+    {
+        Intent intent = new Intent(this, HomePage.class);
+        startActivity(intent);
+    }
+    public void goPremium(View view)
+    {
+        Intent intent = new Intent(this, Premiumm.class);
+        startActivity(intent);
+    }
+    public void goLibrary(View view)
+    {
+        Intent intent = new Intent(this, Library.class);
+        startActivity(intent);
+    }
+///////////////////////////////////////////////////
     ViewPager viewPager;
     Adapter adapter;
     List<Model> models;

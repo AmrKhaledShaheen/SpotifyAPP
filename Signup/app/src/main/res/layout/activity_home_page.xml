@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".HomePage">
 
     <RelativeLayout
@@ -29,7 +30,8 @@
     android:layout_below="@+id/relativeLayout">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +58,10 @@
             android:layout_height="200sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10sp"
-            android:onClick="first_image_clicked" />
+            android:src="@drawable/sas"
+            />
+<!--            android:onClick="first_image_clicked"-->
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,39 +73,27 @@
             android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/text_like"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="50sp"
-            android:text="Recommended for you"
+            android:text="Home page contain some of singers you like. \n             like your favourite singers first\n                   and come to see them ;)"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="200sp"
-            android:layout_height="200sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10sp"
-             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50sp"
-            android:text="Because you like"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+<!--        <ImageView-->
+<!--            android:id="@+id/SecondImageLiked"-->
+<!--            android:layout_width="200sp"-->
+<!--            android:layout_height="200sp"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop="10sp"-->
+<!--            android:src="@drawable/sas"-->
+<!--             />-->
 
-        <ImageView
-            android:id="@+id/SecondImageLiked"
-            android:layout_width="200sp"
-            android:layout_height="200sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10sp"
-            android:onClick="SecondImageLiked" />
         <TextView
+            android:id="@+id/text4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -116,13 +109,77 @@
             android:layout_height="200sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10sp"
-            android:onClick="ThirdImageLiked"></ImageView>
-                </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="100sp"
-            android:layout_marginTop="1185sp"
-            android:background="@color/black"></RelativeLayout>
+            android:onClick="img3_clicked"
+            />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Because you like"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/FourthImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="img4_clicked"
+            />
+<!--            android:onClick="ThirdImageLiked"-->
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Because you like"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/FifthImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="img5_clicked"
+            />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50sp"
+            android:text="Because you like"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/SixthImageLiked"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10sp"
+            android:onClick="img6_clicked"
+            />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="100sp"
+    android:background="@color/black"/>
+    </LinearLayout>
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100sp"-->
+<!--            android:layout_marginTop="1185sp"-->
+<!--            android:background="@color/black"></RelativeLayout>-->
 </RelativeLayout>
 </ScrollView>
     <LinearLayout
@@ -161,7 +218,9 @@
             android:text="Search"
             android:textAllCaps="false"
             android:textColor="#d3d3d3"
-            tools:layout_editor_absoluteX="-43sp" />
+            tools:layout_editor_absoluteX="-43sp"
+            android:onClick="goLogout"
+            />
 
         <Button
             android:id="@+id/libraryButton"

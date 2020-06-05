@@ -150,7 +150,7 @@ public class Activity2 extends AppCompatActivity {
         if(y=="0") {
             Toast.makeText(this, editTextEmail.getText().toString() +"\n"+"sent to backend", Toast.LENGTH_SHORT).show();
             //send the email
-            sharedPreferences=getSharedPreferences("email", Context.MODE_PRIVATE);
+            sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor= sharedPreferences.edit();
             editor.putString("email",editTextEmail.getText().toString());
             editor.apply();

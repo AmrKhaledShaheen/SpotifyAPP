@@ -141,7 +141,7 @@ SharedPreferences sharedPreferences;
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.animationscalebutton);
         CreateButton.startAnimation(animation);
         //send username
-        sharedPreferences=getSharedPreferences("username", Context.MODE_PRIVATE);
+        sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPreferences.edit();
         editor.putString("username",Nameedittext.getText().toString());
         editor.apply();

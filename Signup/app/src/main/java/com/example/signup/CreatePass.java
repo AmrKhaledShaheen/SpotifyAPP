@@ -144,15 +144,10 @@ public class CreatePass extends AppCompatActivity {
         Button buttonNext = (Button) findViewById(R.id.button);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.animationscalebutton);
         buttonNext.startAnimation(animation);
-        //get the email
-        SharedPreferences result=getSharedPreferences("email", Context.MODE_PRIVATE);
-        String email =result.getString("email","Data not found");
         //send password
-        sharedPreferences=getSharedPreferences("password", Context.MODE_PRIVATE);
+        sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPreferences.edit();
         editor.putString("password",editext3.getText().toString());
-        //send email
-        editor.putString("email",email);
         editor.apply();
 
 //        ///Open new window
