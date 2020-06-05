@@ -186,12 +186,14 @@ public class ArtistsView extends AppCompatActivity {
     }
     public void goHome(View view)
     {
-        return;
+        Intent intent=new Intent(this, HomePage.class);
+        startActivity(intent);
     }
 
     public void goPremium(View view)
     {
-        return;
+        Intent intent=new Intent(this, Premiumm.class);
+        startActivity(intent);
     }
 
     public void goSearch(View view)

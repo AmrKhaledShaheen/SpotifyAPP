@@ -140,29 +140,24 @@ public class Library extends AppCompatActivity {
         setContent(R.layout.activity_library);
         playlistsButton.setTextColor(Color.WHITE);
     }
-    public void artistsCall(View view)
+   /* public void artistsCall(View view)
     {
         setContent(R.layout.activity_artists_view);
         artistsButton.setTextColor(Color.WHITE);
 
 
-    }
+    }*/
     public void albumsCall(View view)
     {
-        return;
-        //setContent(R.layout.activity_library);
-        //albums.setTextColor(Color.WHITE);
+        Intent intent=new Intent(this, AlbumsView.class);
+        startActivity(intent);
     }
     public void goHome(View view)
     {
-        /*setContent(R.layout.activity_home);
-        resetAll();
-        homeButton.setTextColor(Color.WHITE);
-        Log.i("HOHOOOO","FASSDA");
-        homeButton.setCompoundDrawables(null, home2, null, null);
-
-        */
+        Intent intent=new Intent(this, HomePage.class);
+        startActivity(intent);
     }
+
     public void goSearch(View view)
     {
         /*resetAll();
@@ -184,6 +179,8 @@ public class Library extends AppCompatActivity {
 
 
         premiumButton.setCompoundDrawables(null,spotify2,null,null);*/
+        Intent intent=new Intent(this, Premiumm.class);
+        startActivity(intent);
     }
     public void showCreate(View view)
     {

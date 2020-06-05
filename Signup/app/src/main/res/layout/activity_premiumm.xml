@@ -163,12 +163,13 @@
     </RelativeLayout>
 </RelativeLayout>
     </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="fill_parent"
         android:layout_height="75sp"
+        android:layout_marginTop="585dp"
         android:background="#5A5757"
-        android:layout_marginTop="590sp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -210,6 +211,7 @@
             android:layout_weight="1"
             android:background="#5A5757"
             android:drawableTop="@drawable/ic_library"
+            android:onClick="goLibrary"
             android:text="Your Library"
             android:textAllCaps="false"
             android:textColor="#d3d3d3"
@@ -226,6 +228,7 @@
             android:onClick="goPremium"
             android:text="Premium"
             android:textAllCaps="false"
+            android:textColor="#d3d3d3"
             tools:layout_editor_absoluteX="-43sp" />
     </LinearLayout>
 </RelativeLayout>

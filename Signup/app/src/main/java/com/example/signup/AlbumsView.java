@@ -65,11 +65,13 @@ public class AlbumsView extends AppCompatActivity {
     }
     public void goPremium(View view)
     {
-        return;
+        Intent intent=new Intent(this, Premiumm.class);
+        startActivity(intent);
     }
     public void goHome(View view)
     {
-        return;
+        Intent intent=new Intent(this, HomePage.class);
+        startActivity(intent);
     }
     public void goSearch(View view)
     {

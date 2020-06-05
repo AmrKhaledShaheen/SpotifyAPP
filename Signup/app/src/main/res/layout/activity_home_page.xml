@@ -182,12 +182,14 @@
 <!--            android:background="@color/black"></RelativeLayout>-->
 </RelativeLayout>
 </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="fill_parent"
         android:layout_height="75sp"
+        android:layout_marginTop="585dp"
+        android:layout_marginBottom="0dp"
         android:background="#5A5757"
-        android:layout_marginTop="590sp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -215,12 +217,11 @@
             android:layout_weight="1"
             android:background="#5A5757"
             android:drawableTop="@drawable/ic_search"
+            android:onClick="goLogout"
             android:text="Search"
             android:textAllCaps="false"
             android:textColor="#d3d3d3"
-            tools:layout_editor_absoluteX="-43sp"
-            android:onClick="goLogout"
-            />
+            tools:layout_editor_absoluteX="-43sp" />
 
         <Button
             android:id="@+id/libraryButton"
@@ -230,8 +231,8 @@
             android:layout_weight="1"
             android:background="#5A5757"
             android:drawableTop="@drawable/ic_library"
-            android:text="Your Library"
             android:onClick="goLibrary"
+            android:text="Your Library"
             android:textAllCaps="false"
             android:textColor="#d3d3d3"
             tools:layout_editor_absoluteX="-43sp" />
@@ -247,6 +248,7 @@
             android:onClick="goPremium"
             android:text="Premium"
             android:textAllCaps="false"
+            android:textColor="#d3d3d3"
             tools:layout_editor_absoluteX="-43sp" />
     </LinearLayout>
 </RelativeLayout>
