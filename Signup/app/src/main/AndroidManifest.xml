@@ -19,10 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".AllSongs"></activity>
+        <activity android:name=".PlaylistDetails" />
         <activity
             android:name=".Logout"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".Main2Activity" />
         <activity
             android:name=".Singers_Songs"
@@ -48,10 +49,7 @@
             android:name=".Searchartist"
             android:label=" "
             android:parentActivityName=".ChooseArtist" />
-        <activity
-            android:name=".Artist"
-            android:label=" "
-            android:parentActivityName=".Library" />
+
         <activity
             android:name=".Library"
             android:label="Music" />

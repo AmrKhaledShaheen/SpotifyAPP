@@ -222,9 +222,19 @@ public class Library extends AppCompatActivity {
         LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         button.setCompoundDrawables(img,null,null,null);
         button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPlaylist();
+            }
+        });
         allplaylistsLinearLayout.addView(button,k);
         playlists_count++;
         saveData(koko);
+    }
+    public void showPlaylist()
+    {
+
     }
     public void openArtistsView(View view)
     {
