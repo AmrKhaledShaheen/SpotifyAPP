@@ -17,6 +17,10 @@ import android.widget.TextView;
 public class ArtistProfile extends AppCompatActivity {
     private String [] adamSongs={"sugar","maps"};
     private String [] amrSongs={"zaymanty","bahebu"};
+    private String [] tamerSongs={"Wanta maaya","Helw elmakan"};
+    private String [] nancySongs={"EL OMR","LYA"};
+    private String [] hamakiSongs={"Ya Sattar","We A3mal Eih"};
+    private String [] waelSongs={"1","2"};
     private ImageView artistimage;
     private TextView artistname;
     private LinearLayout artistsongsLinearLayout;
@@ -56,6 +60,30 @@ public class ArtistProfile extends AppCompatActivity {
             artistimage.setImageDrawable(img);
             artistname.setText(artistName);
             fillartistsongs(amrSongs,artistName);
+        }
+        else if(artistName.equals("  Tamer Hosny"))
+        {
+            Drawable img=getResources().getDrawable(R.drawable.tamer_hosny_liked);
+            img.setBounds(0,0,1040,520);
+            artistimage.setImageDrawable(img);
+            artistname.setText(artistName);
+            fillartistsongs(tamerSongs,artistName);
+        }
+        else if(artistName.equals("  Nancy Ajram"))
+        {
+            Drawable img=getResources().getDrawable(R.drawable.nancy_ajram_liked);
+            img.setBounds(0,0,1040,520);
+            artistimage.setImageDrawable(img);
+            artistname.setText(artistName);
+            fillartistsongs(nancySongs,artistName);
+        }
+        else if(artistName.equals("  Hamaki"))
+        {
+            Drawable img=getResources().getDrawable(R.drawable.mohamed_hamaki_liked);
+            img.setBounds(0,0,1040,520);
+            artistimage.setImageDrawable(img);
+            artistname.setText(artistName);
+            fillartistsongs(hamakiSongs,artistName);
         }
     }
     public void fillartistsongs(String [] songs,String Name)
@@ -106,6 +134,105 @@ public class ArtistProfile extends AppCompatActivity {
                 } else if (songs[i].equals("bahebu")) {
                     button.setText("  Bahebu");
                     img = getResources().getDrawable(R.drawable.bahebu);
+                }
+
+                if (img == null)
+                    return;
+                img.setBounds(0, 0, 200, 200);
+                button.setTextSize(22);
+                button.setPadding(40, 0, 0, 0);
+                button.setAllCaps(false);
+
+                button.setBackgroundColor(Color.BLACK);
+                button.setCompoundDrawables(img, null, null, null);
+                button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        opensongDetails(v);
+                    }
+                });
+                artistsongsLinearLayout.addView(button, k);
+            }
+        }
+        else if(artistName.equals("  Tamer Hosny"))
+        {
+            for (int i = 0; i < songs.length; i++) {
+                Button button = new Button(this);
+
+                Drawable img = null;
+                if (songs[i].equals("Wanta maaya")) {
+                    button.setText("  Wanta maaya");
+                    img = getResources().getDrawable(R.drawable.wantamaaya);
+                } else if (songs[i].equals("Helw elmakan")) {
+                    button.setText("  Helw elmakan");
+                    img = getResources().getDrawable(R.drawable.helwelmakan);
+                }
+
+                if (img == null)
+                    return;
+                img.setBounds(0, 0, 200, 200);
+                button.setTextSize(22);
+                button.setPadding(40, 0, 0, 0);
+                button.setAllCaps(false);
+
+                button.setBackgroundColor(Color.BLACK);
+                button.setCompoundDrawables(img, null, null, null);
+                button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        opensongDetails(v);
+                    }
+                });
+                artistsongsLinearLayout.addView(button, k);
+            }
+        }
+        else if(artistName.equals("  Nancy Ajram"))
+        {
+            for (int i = 0; i < songs.length; i++) {
+                Button button = new Button(this);
+
+                Drawable img = null;
+                if (songs[i].equals("LYA")) {
+                    button.setText("  LYA");
+                    img = getResources().getDrawable(R.drawable.lya);
+                } else if (songs[i].equals("EL OMR")) {
+                    button.setText("  EL OMR");
+                    img = getResources().getDrawable(R.drawable.elomr);
+                }
+
+                if (img == null)
+                    return;
+                img.setBounds(0, 0, 200, 200);
+                button.setTextSize(22);
+                button.setPadding(40, 0, 0, 0);
+                button.setAllCaps(false);
+
+                button.setBackgroundColor(Color.BLACK);
+                button.setCompoundDrawables(img, null, null, null);
+                button.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        opensongDetails(v);
+                    }
+                });
+                artistsongsLinearLayout.addView(button, k);
+            }
+        }
+        else if(artistName.equals("  Hamaki"))
+        {
+            for (int i = 0; i < songs.length; i++) {
+                Button button = new Button(this);
+
+                Drawable img = null;
+                if (songs[i].equals("Ya Sattar")) {
+                    button.setText("  Ya Sattar");
+                    img = getResources().getDrawable(R.drawable.yasattar);
+                } else if (songs[i].equals("We A3mal Eih")) {
+                    button.setText("  We A3mal Eih");
+                    img = getResources().getDrawable(R.drawable.wea3maleh);
                 }
 
                 if (img == null)

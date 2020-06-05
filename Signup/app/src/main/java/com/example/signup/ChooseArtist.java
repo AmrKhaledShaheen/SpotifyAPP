@@ -30,7 +30,7 @@ public class ChooseArtist extends AppCompatActivity {
     private ImageView artist1ImageView,artist2ImageView,artist3ImageView,artist4ImageView,artist5ImageView,artist6ImageView;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private boolean artist1,artist2,artist3,artist4;
+    private boolean artist1,artist2,artist3,artist4,artist5,artist6;
     private int numberOfArtists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,8 @@ public class ChooseArtist extends AppCompatActivity {
         artist2=sharedPreferences.getBoolean("artist2_mode",false);
         artist3=sharedPreferences.getBoolean("artist3_mode",false);
         artist4=sharedPreferences.getBoolean("artist4_mode",false);
+        artist5=sharedPreferences.getBoolean("artist5_mode",false);
+        artist6=sharedPreferences.getBoolean("artist6_mode",false);
         if(artist1) {
             count++;
             editor.putString("artist"+count,artist1TextView.getText().toString());
@@ -84,6 +86,14 @@ public class ChooseArtist extends AppCompatActivity {
             count++;
             editor.putString("artist"+count,artist4TextView.getText().toString());
         }
+        if(artist5){
+            count++;
+            editor.putString("artist"+count,artist5TextView.getText().toString());
+        }
+        if(artist6){
+            count++;
+            editor.putString("artist"+count,artist6TextView.getText().toString());
+        }
         editor.putInt("numberofartists",count);
         editor.apply();
         System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
@@ -96,6 +106,8 @@ public class ChooseArtist extends AppCompatActivity {
         artist2=sharedPreferences.getBoolean("artist2_mode",false);
         artist3=sharedPreferences.getBoolean("artist3_mode",false);
         artist4=sharedPreferences.getBoolean("artist4_mode",false);
+        artist5=sharedPreferences.getBoolean("artist5_mode",false);
+        artist6=sharedPreferences.getBoolean("artist6_mode",false);
         if(artist1)
         {
             artist1true.setVisibility(VISIBLE);
@@ -111,6 +123,14 @@ public class ChooseArtist extends AppCompatActivity {
         if(artist4)
         {
             artist4true.setVisibility(VISIBLE);
+        }
+        if(artist5)
+        {
+            artist5true.setVisibility(VISIBLE);
+        }
+        if(artist6)
+        {
+            artist6true.setVisibility(VISIBLE);
         }
 
     }
@@ -173,19 +193,22 @@ public class ChooseArtist extends AppCompatActivity {
                 System.out.println("artist5");
                 if(artist5true.getVisibility()== VISIBLE) {
                     artist5true.setVisibility(View.INVISIBLE);
-
+                    editor.putBoolean("artist5_mode",false);
                 }
                 else {
                     artist5true.setVisibility(VISIBLE);
+                    editor.putBoolean("artist5_mode",true);
                 }
                 break;
             case "artist6":
                 System.out.println("artist6");
                 if(artist6true.getVisibility()== VISIBLE) {
                     artist6true.setVisibility(View.INVISIBLE);
+                    editor.putBoolean("artist6_mode",false);
                 }
                 else {
                     artist6true.setVisibility(VISIBLE);
+                    editor.putBoolean("artist6_mode",true);
                 }
                 break;
         }
@@ -240,6 +263,14 @@ public class ChooseArtist extends AppCompatActivity {
         {
             i++;
             String text=("  "+artist5TextView.getText().toString());
+
+            intent.putExtra("button"+i+"text",text);
+            numberOfArtists++;
+        }
+        if(artist6true.getVisibility()==VISIBLE)
+        {
+            i++;
+            String text=("  "+artist6TextView.getText().toString());
 
             intent.putExtra("button"+i+"text",text);
             numberOfArtists++;

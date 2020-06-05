@@ -173,13 +173,15 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
-                android:tag="artist5" />
+                android:tag="artist5"
+                app:srcCompat="@drawable/nancy_croped2" />
 
             <TextView
                 android:id="@+id/artist5textView"
                 android:layout_width="110dp"
                 android:layout_height="20dp"
                 android:gravity="center"
+                android:text="Nancy Ajram"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -196,13 +198,15 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:onClick="chooseMe"
-                android:tag="artist6" />
+                android:tag="artist6"
+                app:srcCompat="@drawable/hamaky_croped2" />
 
             <TextView
                 android:id="@+id/artist6textView"
                 android:layout_width="110dp"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
+                android:text="Hamaki"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
         </LinearLayout>

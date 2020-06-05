@@ -112,7 +112,7 @@ public class SongDetails extends AppCompatActivity {
         {
             songImageView.setImageDrawable(getResources().getDrawable(R.drawable.sugar));
             songnameTextView.setText(songName);
-            prepareMediaPlayer("http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3");
+            prepareMediaPlayer("https://drive.google.com/drive/u/0/my-drive");
         }
         else if(songName.equals("  Maps"))
         {
@@ -132,6 +132,43 @@ public class SongDetails extends AppCompatActivity {
             songnameTextView.setText(songName);
             prepareMediaPlayer("http://music.egonair.com/AmrDiab/2020/13-Bahebo.mp3");
         }
+        else if(songName.equals("  Wanta maaya"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.wantamaaya));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/2020/May/Tamer.Hosny.Cheb.Khaled.%20Wa.enta%20.Maayia.mp3");
+        }
+        else if(songName.equals("  Helw elmakan"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.helwelmakan));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/2019/Dec/Tamer.Hosny.Helw.El.Makan.mp3");
+        }
+        else if(songName.equals("  LYA"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.lya));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/2019/Feb/Aghanyna.CoM-Nancy.Ajram.Lya.mp3");
+        }
+        else if(songName.equals("  EL OMR"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.elomr));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("http://music.egonair.com/2020/Apr/Nancy.Ajram.El.Omr.mp3");
+        }
+        else if(songName.equals("  Ya Sattar"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.yasattar));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("https://www.aghanyna.com/arabic/wp-content/uploads/2019/01/Ya.Star_.mp3");
+        }
+        else if(songName.equals("  We A3mal Eih"))
+        {
+            songImageView.setImageDrawable(getResources().getDrawable(R.drawable.wea3maleh));
+            songnameTextView.setText(songName);
+            prepareMediaPlayer("https://www.aghanyna.com/arabic/wp-content/uploads/2019/01/Wa3ml.Eyh_.mp3");
+        }
+
     }
     public void play_pause(View view)
     {

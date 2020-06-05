@@ -142,7 +142,7 @@ public class Library extends AppCompatActivity {
     }
     public void artistsCall(View view)
     {
-        setContent(R.layout.activity_artist1);
+        setContent(R.layout.activity_artists_view);
         artistsButton.setTextColor(Color.WHITE);
 
 

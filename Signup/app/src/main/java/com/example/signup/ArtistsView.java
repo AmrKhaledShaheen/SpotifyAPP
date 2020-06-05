@@ -134,6 +134,14 @@ public class ArtistsView extends AppCompatActivity {
                 {
                     img=getResources().getDrawable(R.drawable.tamer);
                 }
+                else if(name.equals("Nancy Ajram"))
+                {
+                    img=getResources().getDrawable(R.drawable.nancy_croped2);
+                }
+                else if(name.equals("Hamaki"))
+                {
+                    img=getResources().getDrawable(R.drawable.hamaky_croped2);
+                }
                 img.setBounds(0,0,160,160);
                 button.setTextSize(22);
                 button.setPadding(40,0,0,0);
