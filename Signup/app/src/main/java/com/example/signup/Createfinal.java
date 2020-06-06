@@ -144,6 +144,7 @@ SharedPreferences sharedPreferences;
         sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPreferences.edit();
         editor.putString("username",Nameedittext.getText().toString());
+        editor.putBoolean("firsttime",true);
         editor.apply();
         ///Open new window
         Intent intent = new Intent(getApplicationContext(), HomePage.class);

@@ -41,10 +41,16 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     //circleImageView
     implementation 'de.hdodenhof:circleimageview:3.0.0'
+    //
+    implementation 'com.android.support:design:27.1.0'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:25.0.1'
     //Add those line in dependencies
     implementation files('libs/activation.jar')
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
+    //Crop image
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 }

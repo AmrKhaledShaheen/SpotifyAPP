@@ -74,7 +74,14 @@ public void OpenSecondSignup(View view)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Boolean check;
+        SharedPreferences test = getSharedPreferences("spotify", 0);
+        check = test.getBoolean("firsttime", false);
+        if(check)
+        {
+            Intent intent= new Intent(this,HomePage.class);
+            startActivity(intent);
+        }
     }
 //    @Override
 //    protected void onStart() {

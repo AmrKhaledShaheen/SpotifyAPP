@@ -3,7 +3,8 @@
     package="com.example.signup">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -24,7 +25,6 @@
         <activity
             android:name=".Logout"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".Main2Activity" />
         <activity
             android:name=".Singers_Songs"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
@@ -97,6 +97,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat"/>
+
     </application>
 
 </manifest>

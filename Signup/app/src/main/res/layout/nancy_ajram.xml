@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
-            android:text=" Fe hagat"
+            android:text=" EL OMR"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/play_fe_hagat"
+            android:id="@+id/play_ELOMR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
@@ -46,33 +46,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90sp"
-            android:text=" akhasmak ah"
+            android:text=" LYA"
             android:textSize="30sp"
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/play_akhasmak_ah"
+            android:id="@+id/play_LYA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="90sp"
             android:background="@drawable/rounded_button_signup"
             android:text="GO" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150sp"
-            android:text=" Ya Tabtab Wa Dallaa"
-            android:textSize="30sp"
-            android:textColor="@color/white"/>
 
-        <Button
-            android:id="@+id/play_ya_tabtab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300sp"
-            android:layout_marginTop="150sp"
-            android:background="@drawable/rounded_button_signup"
-            android:text="GO" />
     </RelativeLayout>
 </RelativeLayout>

@@ -26,15 +26,16 @@
         android:background="@color/black">
 
         <TextView
+            android:id="@+id/Helwelmakan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
-            android:text=" Nour einy"
+            android:text=" Helw el makan"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/play_nour_einy"
+            android:id="@+id/play_Helwelmakan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
@@ -46,33 +47,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90sp"
-            android:text=" Eish Beshoaak"
-            android:textSize="30sp"
-            android:textColor="@color/white"/>
+            android:text=" Wanta maaya"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
 
         <Button
-            android:id="@+id/play_eish_beshoaak"
+            android:id="@+id/play_Wantamaaya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="90sp"
             android:background="@drawable/rounded_button_signup"
             android:text="GO" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150sp"
-            android:text=" Ergaaly"
-            android:textSize="30sp"
-            android:textColor="@color/white"/>
 
-        <Button
-            android:id="@+id/play_Ergaaly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300sp"
-            android:layout_marginTop="150sp"
-            android:background="@drawable/rounded_button_signup"
-            android:text="GO" />
     </RelativeLayout>
 </RelativeLayout>

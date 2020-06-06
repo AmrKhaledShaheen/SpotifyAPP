@@ -53,9 +53,11 @@ public class Creditcard extends AppCompatActivity {
                 {
                     System.out.println(x.length());
                     warning.setVisibility(View.VISIBLE);
+                    Start_button.setEnabled(false);
                 }
                 else{
                     warning.setVisibility(View.INVISIBLE);
+                    Start_button.setEnabled(true);
                 }
             }
 
@@ -64,10 +66,6 @@ public class Creditcard extends AppCompatActivity {
 
             }
         });
-
-
-
-
         //////////////////////
         Start_button = (Button) findViewById(R.id.Start_button);
         Start_button.setOnClickListener(new View.OnClickListener() {

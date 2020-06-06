@@ -29,12 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
-            android:text=" Wahda Wahda"
+            android:text=" Ya Sattar"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/play_wahda_wahda"
+            android:id="@+id/play_YaSattar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
@@ -43,36 +43,22 @@
             android:text="GO" />
 
         <TextView
+            android:id="@+id/WeA3malEih"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="90sp"
-            android:text=" Mabalash"
-            android:textSize="30sp"
-            android:textColor="@color/white"/>
+            android:text=" We A3mal Eih"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
 
         <Button
-            android:id="@+id/play_mabalash"
+            android:id="@+id/play_WeA3malEih"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="300sp"
             android:layout_marginTop="90sp"
             android:background="@drawable/rounded_button_signup"
             android:text="GO" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150sp"
-            android:text=" Mel Bedaya"
-            android:textSize="30sp"
-            android:textColor="@color/white"/>
 
-        <Button
-            android:id="@+id/play_mel_bedaya"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="300sp"
-            android:layout_marginTop="150sp"
-            android:background="@drawable/rounded_button_signup"
-            android:text="GO" />
     </RelativeLayout>
 </RelativeLayout>

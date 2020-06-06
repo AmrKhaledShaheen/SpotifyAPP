@@ -2,6 +2,7 @@ package com.example.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -35,6 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @version 1.0
  */
 public class LoginActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
     /**
      * EditText for user to write username and password in each one for login request
      */
@@ -213,7 +215,10 @@ public class LoginActivity extends AppCompatActivity {
 
     protected  void openHome()
     {
-
+        sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putBoolean("firsttime",true);
+        editor.apply();
         Intent intent=new Intent(this, HomePage.class);
         startActivity(intent);
         /*finish();

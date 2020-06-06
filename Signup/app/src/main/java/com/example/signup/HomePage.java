@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -136,30 +137,7 @@ public void img3_clicked(View view)
         }
 
     }
-//    public void yrb(View view,List namesofliked)
-//    {
-//        for(int i=0;i<namesofliked.size();i++)
-//      {
-//        if (namesofliked.get(i).equals("Amr Diab")) {
-//            ImageView firstlike = (ImageView) findViewById(R.id.FirstImageLiked);
-//            firstlike.setImageResource(R.drawable.amr_diab_liked);
-//            test="amr";
-//        }
-//        if (namesofliked.get(i).equals("Mohamed Hamaki")) {
-//            ImageView secondlike = (ImageView) findViewById(R.id.SecondImageLiked);
-//            secondlike.setImageResource(R.drawable.mohamed_hamaki_liked);
-//        }
-//          if (namesofliked.get(i).equals("Tamer hosny")) {
-//              ImageView thirdlike = (ImageView) findViewById(R.id.ThirdImageLiked);
-//              thirdlike.setImageResource(R.drawable.tamer_hosny_liked);
-//          }
-//          if (namesofliked.get(i).equals("Nancy ajram")) {
-//              ImageView firstlike_2 = (ImageView) findViewById(R.id.FirstImageLiked);
-//              firstlike_2.setImageResource(R.drawable.nancy_ajram_liked);
-//              test="nancy";
-//          }
-//      }
-//    }
+    /////////////////////////////////////////////////////////////TOOLBAR
     public void goHome(View view)
     {
         Intent intent = new Intent(this, HomePage.class);
@@ -181,28 +159,7 @@ public void img3_clicked(View view)
         startActivity(intent);
 
     }
-//    //////Images button
-//    //First
-//    public void first_image_clicked(View view)
-//    {
-//        Intent intent = new Intent(getBaseContext(), Singers_Songs.class);
-//        intent.putExtra("EXTRA_SESSION_ID", test);
-//        startActivity(intent);
-//    }
-//    //Second
-//    public void SecondImageLiked(View view)
-//    {
-//        Intent intent = new Intent(getBaseContext(), Singers_Songs.class);
-//        intent.putExtra("EXTRA_SESSION_ID", test);
-//        startActivity(intent);
-//    }
-//    //Third
-//    public void ThirdImageLiked(View view)
-//    {
-//        Intent intent = new Intent(getBaseContext(), Singers_Songs.class);
-//        intent.putExtra("EXTRA_SESSION_ID", test);
-//        startActivity(intent);
-//    }
+    ////////////////////////////////////////////////////////////////////////////
     public void yrab(View view,List list) {
         //////////////////////////////////////////////////////////////////images
         ImageView img3 = (ImageView) findViewById(R.id.ThirdImageLiked);
@@ -381,66 +338,33 @@ public void img3_clicked(View view)
             switch(name)
             {
                 case "Amr Diab":
+                    namesoflikedB.add("Amr_Diab");
                     break;
-                case "Adam Levine":
-                    break;
+//                case "Adam Levine":
+//                    break;
                 case "Nancy Ajram":
+                    namesoflikedB.add("Nancy_ajram");
                     break;
-                case "Wael Kfoury":
-                    break;
+//                case "Wael Kfoury":
+//                    break;
                 case "Tamer Hosny":
+                    namesoflikedB.add("Tamer_hosny");
                     break;
                 case "Hamaki":
+                    namesoflikedB.add("Mohamed_Hamaki");
                     break;
 
             }
-            namesoflikedB.add("Amr_Diab");
-            namesoflikedB.add("Mohamed_Hamaki");
-            namesoflikedB.add("Tamer_hosny");
-            namesoflikedB.add("Nancy_ajram");
         }
-
         ImageView x = null;
         yrab(x,namesoflikedB);
         SharedPreferences result_email= getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences result_password= getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences result_username= getSharedPreferences("spotify", Context.MODE_PRIVATE);
-//        ////artists
-//        boolean Amr_Diab = false;
-//        boolean Mohamed_Hamaki= true;
-//        boolean Tamer_Hosny = false;
-//        boolean Nancy_Ajram= true;
-//        //get data
+
         String email =result_email.getString("email","Data not found"); //email
         String password =result_password.getString("password","Data not found"); // password
         String username =result_username.getString("username","Data not found"); // username
-        Toast.makeText(this, email+"\n"+password+"\n"+username, Toast.LENGTH_SHORT).show();
-//        //////////////names ly h5odha mn l backend/////////////////////////////////////////////
-//        List namesoflikedB = new ArrayList<String>();
-//        if (Amr_Diab) {
-//            namesoflikedB.add("Amr Diab");
-//        }
-//        if(Mohamed_Hamaki) {
-//            namesoflikedB.add("Mohamed Hamaki");
-//        }
-//        if(Tamer_Hosny) {
-//            namesoflikedB.add("Tamer hosny");
-//        }
-//        if(Nancy_Ajram) {
-//            namesoflikedB.add("Nancy ajram");
-//        }
-//        //////////////////////////////////////////////////////////////////
-/////////////////////////b5do fl array bt3y/////////////////////////
-//        List namesofliked = new ArrayList<String>();
-//        namesofliked=namesoflikedB;
-        ////////////////////////////////////////////////////////////////////////////////////////
-//        System.out.println(namesofliked.get(1));
-//        System.out.println(namesofliked.get(0));
-//        System.out.println("sssssss");
-//        System.out.println(namesofliked.size());
-//        ImageView x = null;
-//        if(namesofliked.size()!=0) {
-//            yrb(x, namesofliked);
-//        }
+
     }
 }
