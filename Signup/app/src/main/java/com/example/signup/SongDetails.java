@@ -39,7 +39,7 @@ public class SongDetails extends AppCompatActivity {
         songImageView=(ImageView) findViewById(R.id.songimageView);
         songnameTextView=(TextView) findViewById(R.id.songnametextView);
         play_pause_imageView=(ImageView) findViewById(R.id.play_pause_imageView);
-        mediaPlayer=new MediaPlayer();
+        mediaPlayer=MySingleton.getInstance();
         playerSeekBar.setMax(100);
         sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
         editor=sharedPreferences.edit();
@@ -106,19 +106,20 @@ public class SongDetails extends AppCompatActivity {
     {
         //songName=getIntent().getStringExtra("songName");
         songName=sharedPreferences.getString("songName","not found");
+        editor.putString("currentSong",songName).apply();
         //mediaPlayer= MediaPlayer.create(this,R.raw.laugh);
         audioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
         if(songName.equals("  Sugar"))
         {
             songImageView.setImageDrawable(getResources().getDrawable(R.drawable.sugar));
             songnameTextView.setText(songName);
-            prepareMediaPlayer("https://drive.google.com/drive/u/0/my-drive");
+            prepareMediaPlayer("http://music.egonair.com/AmrDiab/2020/10-Zay.Manty.mp3");
         }
         else if(songName.equals("  Maps"))
         {
             songImageView.setImageDrawable(getResources().getDrawable(R.drawable.maps));
             songnameTextView.setText(songName);
-            prepareMediaPlayer("http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3");
+            prepareMediaPlayer("http://music.egonair.com/AmrDiab/2020/10-Zay.Manty.mp3");
         }
         else if(songName.equals("  Zaymanty"))
         {
@@ -191,6 +192,9 @@ public class SongDetails extends AppCompatActivity {
     private void prepareMediaPlayer(String url)
     {
         try{
+            System.out.println("Trueeeeeee");
+            mediaPlayer.stop();
+            mediaPlayer.reset();
              mediaPlayer.setDataSource(url);
              mediaPlayer.prepare();
              songtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getDuration()));

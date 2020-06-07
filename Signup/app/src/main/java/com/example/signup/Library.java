@@ -34,6 +34,8 @@ public class Library extends AppCompatActivity {
     Drawable[] drawableArray={spotify1,spotify2,search1,search2,home1,home2,library1,library2};
     Button [] buttonsArray={homeButton,libraryButton,searchButton,premiumButton};
     private DataServer dataServer;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     /// SharedPrefs /////
     public static final String SHARED_PREFS="sharedPrefs";
@@ -47,7 +49,8 @@ public class Library extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-
+        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        editor=sharedPreferences.edit();
         ///////// Create playlist linear layout and its children
         createplaylistLinearLayout=(LinearLayout) findViewById(R.id.createplaylistLinearLayout);
         addplaylistButton=(Button) findViewById(R.id.addplaylistButton);
@@ -225,15 +228,20 @@ public class Library extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPlaylist();
+                showPlaylist(v);
             }
         });
         allplaylistsLinearLayout.addView(button,k);
         playlists_count++;
         saveData(koko);
     }
-    public void showPlaylist()
+    public void showPlaylist(View v)
     {
+        Button b= (Button) v;
+        String playlistName=b.getText().toString();
+        System.out.println(playlistName);
+        editor.putString("playlistName",playlistName);
+        editor.apply();
         Intent intent=new Intent(this, PlaylistDetails.class);
         startActivity(intent);
     }
@@ -245,8 +253,7 @@ public class Library extends AppCompatActivity {
 
     public void saveData(String koko)
     {
-        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        SharedPreferences.Editor editor=sharedPreferences.edit();
+
         editor.putInt(playlists_Number,playlists_count);
         editor.putString("playlist"+playlists_count,koko);
         editor.apply();
@@ -254,7 +261,7 @@ public class Library extends AppCompatActivity {
 
     public void loadData() {
 
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        //SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         playlists_count = sharedPreferences.getInt(playlists_Number, 0);
 
         System.out.println(playlists_count);
@@ -275,6 +282,12 @@ public class Library extends AppCompatActivity {
             LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             button.setCompoundDrawables(img,null,null,null);
             button.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showPlaylist(v);
+                }
+            });
             allplaylistsLinearLayout.addView(button,k);
         }
     }
