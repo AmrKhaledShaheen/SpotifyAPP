@@ -33,6 +33,7 @@ public class PlaylistDetails extends AppCompatActivity {
     private Drawable img,img2;
     private ImageView imageView;
     private int currentSec;
+    private String current_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,8 @@ public class PlaylistDetails extends AppCompatActivity {
 
         setContentView(R.layout.activity_playlist_details);
 
-        sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor = sharedPreferences.edit();
         playbar = (Button) findViewById(R.id.playbarButton);
         addSongs = (Button) findViewById(R.id.addSongsButton);
@@ -48,6 +50,12 @@ public class PlaylistDetails extends AppCompatActivity {
         songslinearLayout = (LinearLayout) findViewById(R.id.playlistsongsLinearLayout);
         imageView=(ImageView) findViewById(R.id.play_pause_imageView);
         mediaPlayer=MySingleton.getInstance();
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                prepareMediaPlayer(current_url);
+            }
+        });
         loadData();
 
     }
@@ -64,6 +72,7 @@ public class PlaylistDetails extends AppCompatActivity {
             String songName=sharedPreferences.getString("currentSong","not found");
             Drawable image1=null;
             Drawable image2=null;
+            System.out.println(songName);
             imageView.setVisibility(View.VISIBLE);
             playbar.setVisibility(View.VISIBLE);
             playbar.setText(songName);
@@ -104,7 +113,7 @@ public class PlaylistDetails extends AppCompatActivity {
             } else if (songName.equals("  We A3mal Eih")) {
 
                 image2 = getResources().getDrawable(R.drawable.wea3maleh);
-            } else if (songName.equals("  zaymanty")) {
+            } else if (songName.equals("  Zaymanty")) {
 
                 image2 = getResources().getDrawable(R.drawable.zaymanty);
             } else if (songName.equals("  bahebu")) {
@@ -215,6 +224,8 @@ public class PlaylistDetails extends AppCompatActivity {
     }
 
     public void goSearch(View view) {
+        Intent intent = new Intent(this,Logout.class);
+        startActivity(intent);
     }
 
     public void goLibrary(View view) {
@@ -406,10 +417,13 @@ public class PlaylistDetails extends AppCompatActivity {
     private void prepareMediaPlayer(String url)
     {
         try{
+            current_url=url;
             System.out.println(url);
             System.out.println("EL DONIA eshta");
             if(mediaPlayer!=null) {
-                mediaPlayer.stop();
+                if(mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                }
                 mediaPlayer.reset();
             }
             mediaPlayer.setDataSource(url);

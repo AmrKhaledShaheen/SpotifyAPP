@@ -34,7 +34,8 @@ public class ArtistProfile extends AppCompatActivity {
         artistname=(TextView) findViewById(R.id.artistnametextView);
         artistimage=(ImageView) findViewById(R.id.artistimageView);
         artistsongsLinearLayout=(LinearLayout) findViewById(R.id.artistsongsLinearLayout);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
         whichArtist();
     }

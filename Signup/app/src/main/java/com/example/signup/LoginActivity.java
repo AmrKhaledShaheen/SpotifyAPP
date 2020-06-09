@@ -37,6 +37,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class LoginActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     /**
      * EditText for user to write username and password in each one for login request
      */
@@ -162,6 +163,8 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
                             TextView show=(TextView) findViewById(R.id.textView3);
+                            System.out.println(Username);
+                            editor.putString("currentEmail",Username).apply();
                             openHome();
                             return;
                         }
@@ -215,8 +218,7 @@ public class LoginActivity extends AppCompatActivity {
 
     protected  void openHome()
     {
-        sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor= sharedPreferences.edit();
+
         editor.putBoolean("firsttime",true);
         editor.apply();
         Intent intent=new Intent(this, HomePage.class);
@@ -228,8 +230,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences preferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
-        preferences.edit().clear().commit();
+        sharedPreferences=getSharedPreferences("spotify", Context.MODE_PRIVATE);
+        editor=sharedPreferences.edit();
+        //SharedPreferences preferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        //preferences.edit().clear().commit();
         setContentView(R.layout.activity_login);
         username=(EditText) findViewById(R.id.email_usernameEditText);
         password=(EditText) findViewById(R.id.passwordEditText);

@@ -29,7 +29,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_ELOMR.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  EL OMR");
                     editor.apply();
@@ -40,7 +41,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_LYA.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  LYA");
                     editor.apply();
@@ -57,18 +59,20 @@ public class Singers_Songs extends AppCompatActivity {
             play_Zaymanty.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-            sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor= sharedPreferences.edit();
-            editor.putString("songName","  Zaymanty");
-            editor.apply();
-            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
-            startActivity(intent);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                    SharedPreferences.Editor editor= sharedPreferences.edit();
+                    editor.putString("songName","  Zaymanty");
+                    editor.apply();
+                    Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                    startActivity(intent);
                 }
             });
             play_Bahebu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  Bahebu");
                     editor.apply();
@@ -85,7 +89,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_Helwelmakan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  Helw elmakan");
                     editor.apply();
@@ -96,7 +101,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_Wantamaaya.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  Wanta maaya");
                     editor.apply();
@@ -113,7 +119,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_YaSattar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  Ya Sattar");
                     editor.apply();
@@ -124,7 +131,8 @@ public class Singers_Songs extends AppCompatActivity {
             play_WeA3malEih.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    sharedPreferences=getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
+                    String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                    sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("songName","  We A3mal Eih");
                     editor.apply();

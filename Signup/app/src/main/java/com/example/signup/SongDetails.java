@@ -24,6 +24,7 @@ public class SongDetails extends AppCompatActivity {
     private TextView songnameTextView,currentsongtimeTextView,songtimeTextView;
     private SeekBar playerSeekBar;
     private Handler handler= new Handler();
+    private String song_url;
 
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
@@ -41,7 +42,8 @@ public class SongDetails extends AppCompatActivity {
         play_pause_imageView=(ImageView) findViewById(R.id.play_pause_imageView);
         mediaPlayer=MySingleton.getInstance();
         playerSeekBar.setMax(100);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        final String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
         playerSeekBar.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -51,6 +53,13 @@ public class SongDetails extends AppCompatActivity {
                 mediaPlayer.seekTo(playPosition);
                 currentsongtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getCurrentPosition()));
                 return false;
+            }
+        });
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                //mp.seekTo(1);
+                prepareMediaPlayer(song_url);
             }
         });
         showsongsDetails();
@@ -192,11 +201,15 @@ public class SongDetails extends AppCompatActivity {
     private void prepareMediaPlayer(String url)
     {
         try{
+            song_url=url;
             System.out.println("Trueeeeeee");
-            mediaPlayer.stop();
+            if(mediaPlayer.isPlaying()) {
+                mediaPlayer.stop();
+            }
             mediaPlayer.reset();
              mediaPlayer.setDataSource(url);
              mediaPlayer.prepare();
+             mediaPlayer.start();
              songtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         }catch(Exception exception)
         {

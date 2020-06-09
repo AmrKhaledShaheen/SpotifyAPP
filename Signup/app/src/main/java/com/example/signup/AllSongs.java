@@ -32,7 +32,8 @@ public class AllSongs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
 
         setContentView(R.layout.activity_all_songs);
@@ -104,7 +105,7 @@ public class AllSongs extends AppCompatActivity {
                     img=getResources().getDrawable(R.drawable.yasattar);
                     break;
                 case "We A3mal Eih":
-                    img=getResources().getDrawable(R.drawable.wantamaaya);
+                    img=getResources().getDrawable(R.drawable.wea3maleh);
                     break;
             }
             img.setBounds(0,0,160,160);

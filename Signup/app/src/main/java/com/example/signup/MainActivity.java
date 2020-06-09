@@ -76,7 +76,7 @@ public void OpenSecondSignup(View view)
         setContentView(R.layout.activity_main);
         Boolean check;
         SharedPreferences test = getSharedPreferences("spotify", 0);
-        check = test.getBoolean("firsttime", false);
+        check = test.getBoolean("firsttime1", false);
         if(check)
         {
             Intent intent= new Intent(this,HomePage.class);

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -37,7 +38,9 @@ public class Logout extends AppCompatActivity {
     boolean firsttime = false;
     /////////////////////////////////////////
     public void logoutclicked(View view) {
-
+        MediaPlayer mediaPlayer=MySingleton.getInstance();
+        if(mediaPlayer!=null)
+            mediaPlayer.pause();
         Intent intent = new Intent(getBaseContext(), LoginActivity.class);
         startActivity(intent);
         sharedPreferences = getSharedPreferences("spotify", Context.MODE_PRIVATE);

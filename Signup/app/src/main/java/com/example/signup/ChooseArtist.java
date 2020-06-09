@@ -35,7 +35,8 @@ public class ChooseArtist extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
         setContentView(R.layout.activity_choose_artist);
         artist1true=(ImageView) findViewById(R.id.artist1true);

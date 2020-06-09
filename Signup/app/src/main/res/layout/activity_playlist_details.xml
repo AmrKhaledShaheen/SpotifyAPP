@@ -141,6 +141,7 @@
             android:layout_weight="1"
             android:background="#5A5757"
             android:drawableTop="@drawable/ic_library"
+            android:onClick="goLibrary"
             android:text="Your Library"
             android:textAllCaps="false"
             android:textColor="#d3d3d3"

@@ -49,7 +49,8 @@ public class Library extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
         ///////// Create playlist linear layout and its children
         createplaylistLinearLayout=(LinearLayout) findViewById(R.id.createplaylistLinearLayout);

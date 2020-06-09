@@ -279,7 +279,8 @@ public void img3_clicked(View view)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        sharedPreferences=getSharedPreferences("sharedPrefs",MODE_PRIVATE);
+        String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+        sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
         numberofartists=sharedPreferences.getInt("numberofartists",0);
         System.out.println(numberofartists);
