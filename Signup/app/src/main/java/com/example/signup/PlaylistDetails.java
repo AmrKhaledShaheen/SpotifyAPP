@@ -54,6 +54,7 @@ public class PlaylistDetails extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 prepareMediaPlayer(current_url);
+                mp.start();
             }
         });
         loadData();

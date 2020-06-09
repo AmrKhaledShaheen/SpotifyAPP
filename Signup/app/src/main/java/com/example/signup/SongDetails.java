@@ -60,6 +60,7 @@ public class SongDetails extends AppCompatActivity {
             public void onCompletion(MediaPlayer mp) {
                 //mp.seekTo(1);
                 prepareMediaPlayer(song_url);
+                mp.start();
             }
         });
         showsongsDetails();
@@ -209,7 +210,7 @@ public class SongDetails extends AppCompatActivity {
             mediaPlayer.reset();
              mediaPlayer.setDataSource(url);
              mediaPlayer.prepare();
-             mediaPlayer.start();
+
              songtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         }catch(Exception exception)
         {
