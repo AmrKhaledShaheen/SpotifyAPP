@@ -10,8 +10,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * Activity which shows songs of artist to play
+ * @version 1.0
+ */
+
 public class Singers_Songs extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+    /**
+     * if conditions to check which artist to show his/her songs
+     * opens song details activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

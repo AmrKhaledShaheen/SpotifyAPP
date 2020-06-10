@@ -134,6 +134,12 @@ SharedPreferences sharedPreferences;
         Privacy.setText(ss2);
         Privacy.setMovementMethod(LinkMovementMethod.getInstance());
     }
+
+
+    /**
+     * first time sign up to enter home page directly
+     * @param view
+     */
     public void Createbutton (View view)
     {
         Button CreateButton=(Button)findViewById(R.id.Createbutton);

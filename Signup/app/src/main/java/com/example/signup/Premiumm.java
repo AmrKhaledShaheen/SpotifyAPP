@@ -14,9 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
+/**
+ * Activity which allows user to promote his account to be premium
+ * @version 1.0
+ */
+
 public class Premiumm extends AppCompatActivity {
     Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
     private Button homeButton,searchButton,libraryButton,premiumButton;
+    /**
+     * send user to credit card activity to enter 14 number of credit card
+
+     * @param view
+     */
     public void GetPremium_button(View view)
     {
         Intent intent = new Intent(this, Creditcard.class);
@@ -25,22 +35,43 @@ public class Premiumm extends AppCompatActivity {
         Shared shared=new Shared(getApplicationContext());
         shared.Logout();
     }
+    /**
+     * send user to credit card activity to enter 14 number of credit card
+
+     * @param view
+     */
     public void Try_button(View view)
     {
         Intent intent = new Intent(this, Creditcard.class);
         startActivity(intent);
     }
+    /**
+     * opens home page
+
+     * @param view
+     */
     ///////////////////////////////////////////Toolbar
     public void goHome(View view)
     {
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
+    /**
+     * opens home premium
+     *
+
+     * @param view
+     */
     public void goPremium(View view)
     {
         Intent intent = new Intent(this, Premiumm.class);
         startActivity(intent);
     }
+    /**
+     * opens library page
+
+     * @param view
+     */
     public void goLibrary(View view)
     {
         Intent intent = new Intent(this, Library.class);

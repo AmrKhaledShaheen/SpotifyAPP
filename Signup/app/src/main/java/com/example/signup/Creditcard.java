@@ -13,20 +13,27 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This is an activity to take number of credit card and make email confirmation
+ * @version 1.0
+ */
+
+
 public class Creditcard extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+    /**
+     * boolean to check wether its already premium or not
+     */
     public boolean premium=false;
+    /**
+     * Button to send email
+     */
     public Button Start_button;
-    public void yrb(View view)
-    {
-        wee(this);
 
-    }
-    public void wee(Context context)
-    {
-        SharedPreferences settings2 = context.getSharedPreferences("spotify", Context.MODE_PRIVATE);
-        settings2.edit().clear().commit();
-    }
+
+    /**
+     * check if it's 14 number (0-9) and not including letters
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +89,9 @@ public class Creditcard extends AppCompatActivity {
             }
         });
     }
+    /**
+     * sends confirmation email
+     */
         private void sendMail()
         {
             ///

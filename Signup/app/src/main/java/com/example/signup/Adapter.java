@@ -12,7 +12,13 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
+/**
+ * This is a class for horizontal image scrolling/recycle view
+ * @version 1.0
+ */
+
 public class Adapter extends PagerAdapter {
+
     private List<Model>models;
     private LayoutInflater layoutInflater;
     private Context context;
@@ -21,17 +27,27 @@ public class Adapter extends PagerAdapter {
         this.models = models;
         this.context = context;
     }
+    /**
+     * gets number of images in recycle view
 
+     */
     @Override
     public int getCount() {
         return models.size();
     }
+    /**
+     * Finds whether an image is in this place or not
 
+     */
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view.equals(object);
     }
 
+    /**
+     * set the chosen image in its indicies
+
+     */
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {

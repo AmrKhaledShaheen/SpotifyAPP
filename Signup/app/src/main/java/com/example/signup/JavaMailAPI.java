@@ -13,6 +13,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * check if he has logged in before or not
+ * @version 1.0
+ */
+
 public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
 
     //Add those line in dependencies

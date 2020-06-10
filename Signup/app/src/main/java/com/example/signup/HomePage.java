@@ -18,13 +18,37 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the home page when users log in
+ * @version 1.0
+ */
+
 public class HomePage extends AppCompatActivity {
+
+    /**
+     * String variables which take name of singers
+     */
 String img3_singer,img4_singer,img5_singer,img6_singer="";
+    /**
+     * Drawable files for toolbar below of (HOME,LIBRARY,SEARCH,PREMIUM)
+     */
 Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
+    /**
+     * Buttons which open activities (HOME,LIBRARY,SEARCH,PREMIUM)
+     */
 private Button homeButton,searchButton,libraryButton,premiumButton;
 private SharedPreferences sharedPreferences;
 private SharedPreferences.Editor editor;
+    /**
+     * Integer indicates number of liked artists
+     */
 private int numberofartists;
+
+    /**
+     * checks which singer i chooose then go to his/her activity
+
+     * @param view
+     */
 public void img3_clicked(View view)
 {
     if(img3_singer=="amr")
@@ -53,6 +77,11 @@ public void img3_clicked(View view)
     }
 
 }
+    /**
+     * checks which singer i chooose then go to his/her activity
+
+     * @param view
+     */
     public void img4_clicked(View view)
     {
         if(img4_singer=="amr")
@@ -81,6 +110,11 @@ public void img3_clicked(View view)
         }
 
     }
+    /**
+     * checks which singer i chooose then go to his/her activity
+
+     * @param view
+     */
     public void img5_clicked(View view)
     {
         if(img5_singer=="amr")
@@ -109,6 +143,11 @@ public void img3_clicked(View view)
         }
 
     }
+    /**
+     * checks which singer i chooose then go to his/her activity
+
+     * @param view
+     */
     public void img6_clicked(View view)
     {
         if(img6_singer=="amr")
@@ -138,21 +177,41 @@ public void img3_clicked(View view)
 
     }
     /////////////////////////////////////////////////////////////TOOLBAR
+    /**
+     * opens home page
+
+     * @param view
+     */
     public void goHome(View view)
     {
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
+    /**
+     * opens premium page
+
+     * @param view
+     */
     public void goPremium(View view)
     {
         Intent intent = new Intent(this, Premiumm.class);
         startActivity(intent);
     }
+    /**
+     * opens Library page
+
+     * @param view
+     */
     public void goLibrary(View view)
     {
         Intent intent = new Intent(this, Library.class);
         startActivity(intent);
     }
+    /**
+     * signs out user
+
+     * @param view
+     */
     public void goLogout(View view)
     {
         Intent intent = new Intent(getApplicationContext(), Logout.class);
@@ -160,6 +219,12 @@ public void img3_clicked(View view)
 
     }
     ////////////////////////////////////////////////////////////////////////////
+    /**
+     * takes from database singers whom are liked and set it to homepage
+     * changes visibilty of textviews
+     * @param view
+     * @param list
+     */
     public void yrab(View view,List list) {
         //////////////////////////////////////////////////////////////////images
         ImageView img3 = (ImageView) findViewById(R.id.ThirdImageLiked);
