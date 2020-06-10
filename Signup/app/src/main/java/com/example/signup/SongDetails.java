@@ -23,6 +23,7 @@ public class SongDetails extends AppCompatActivity {
     private ImageView songImageView,play_pause_imageView;
     private TextView songnameTextView,currentsongtimeTextView,songtimeTextView;
     private SeekBar playerSeekBar;
+    private SeekBar volumeSeekBar;
     private Handler handler= new Handler();
     private String song_url;
 
@@ -30,6 +31,7 @@ public class SongDetails extends AppCompatActivity {
     AudioManager audioManager;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private int maxVolume;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,11 +39,27 @@ public class SongDetails extends AppCompatActivity {
         currentsongtimeTextView=(TextView) findViewById(R.id.currentsongtimeTextView);
         songtimeTextView=(TextView) findViewById(R.id.songtimeTextView);
         playerSeekBar =(SeekBar) findViewById(R.id.playerSeekBar);
+        volumeSeekBar =(SeekBar) findViewById(R.id.volumeSeekBar);
         songImageView=(ImageView) findViewById(R.id.songimageView);
         songnameTextView=(TextView) findViewById(R.id.songnametextView);
         play_pause_imageView=(ImageView) findViewById(R.id.play_pause_imageView);
         mediaPlayer=MySingleton.getInstance();
+
         playerSeekBar.setMax(100);
+        volumeSeekBar.setMax(100);
+        volumeSeekBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                SeekBar seekBar=(SeekBar) v;
+
+                float volume=(float)seekBar.getProgress()/100;
+                System.out.println(volume);
+                if(mediaPlayer!=null) {
+                    mediaPlayer.setVolume(volume,volume);
+                }
+                return false;
+            }
+        });
         final String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
         sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
         editor=sharedPreferences.edit();
@@ -208,13 +226,108 @@ public class SongDetails extends AppCompatActivity {
                 mediaPlayer.stop();
             }
             mediaPlayer.reset();
-             mediaPlayer.setDataSource(url);
-             mediaPlayer.prepare();
+            mediaPlayer.setDataSource(url);
+            mediaPlayer.prepare();
 
-             songtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
+            songtimeTextView.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         }catch(Exception exception)
         {
             Toast.makeText(this,exception.getMessage(),Toast.LENGTH_SHORT).show();
         }
+    }
+    public void next(View v)
+    {
+        String name=sharedPreferences.getString("songName","not found");
+        if(name.equals("  Sugar"))
+        {
+            editor.putString("songName","  Maps");
+        }
+        else if(name.equals("  Maps"))
+        {
+            editor.putString("songName","  Zaymanty");
+        }
+        else if(name.equals("  Zaymanty"))
+        {
+            editor.putString("songName","  Bahebu");
+        }
+        else if(name.equals("  Bahebu"))
+        {
+            editor.putString("songName","  Wanta maaya");
+        }
+        else if(name.equals("  Wanta maaya"))
+        {
+            editor.putString("songName","  Helw elmakan");
+        }
+        else if(name.equals("  Helw elmakan"))
+        {
+            editor.putString("songName","  LYA");
+        }
+        else if(name.equals("  LYA"))
+        {
+            editor.putString("songName","  EL OMR");
+        }
+        else if(name.equals("  EL OMR"))
+        {
+            editor.putString("songName","  Ya Sattar");
+        }
+        else if(name.equals("  Ya Sattar"))
+        {
+            editor.putString("songName","  We A3mal Eih");
+        }
+        else if(name.equals("  We A3mal Eih"))
+        {
+            editor.putString("songName","  Sugar");
+        }
+        editor.apply();
+        showsongsDetails();
+        mediaPlayer.start();
+
+    }
+    public void previous(View v)
+    {
+        String name=sharedPreferences.getString("songName","not found");
+        if(name.equals("  Sugar"))
+        {
+            editor.putString("songName","  We A3mal Eih");
+        }
+        else if(name.equals("  Maps"))
+        {
+            editor.putString("songName","  Sugar");
+        }
+        else if(name.equals("  Zaymanty"))
+        {
+            editor.putString("songName","  Maps");
+        }
+        else if(name.equals("  Bahebu"))
+        {
+            editor.putString("songName","  Zaymanty");
+        }
+        else if(name.equals("  Wanta maaya"))
+        {
+            editor.putString("songName","  Bahebu");
+        }
+        else if(name.equals("  Helw elmakan"))
+        {
+            editor.putString("songName","  Wanta maaya");
+        }
+        else if(name.equals("  LYA"))
+        {
+            editor.putString("songName","  Helw elmakan");
+        }
+        else if(name.equals("  EL OMR"))
+        {
+            editor.putString("songName","  LYA");
+        }
+        else if(name.equals("  Ya Sattar"))
+        {
+            editor.putString("songName","  EL OMR");
+        }
+        else if(name.equals("  We A3mal Eih"))
+        {
+            editor.putString("songName","  Sugar");
+        }
+        editor.apply();
+        showsongsDetails();
+        mediaPlayer.start();
     }
 }
