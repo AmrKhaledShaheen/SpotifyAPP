@@ -6,8 +6,11 @@ AndroidTeam5
           2)Youssef Salah Mohamed 1170191.
 ---
 ## New feautres
-*For Youssef Salah:
+###For Youssef Salah:
+
+
                     1)Home Page: Images of all the singers user like and on click on it open page of this singer contains all his songs and on click on song it will open the player of this song.
+                    
                     2)Premium:   Creditcard with sending a confirmation email to the mail the user signed in/up with.
                     3)Search:    Can search on all songs in the server and on click on it the song open in player.
                     4)Profile:    a)Upload profile picture from gallery on phone.
