@@ -77,8 +77,11 @@ public class Creditcard extends AppCompatActivity {
         Start_button = (Button) findViewById(R.id.Start_button);
         Start_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                SharedPreferences result_premium = getSharedPreferences("spotify", 0);
-                premium = result_premium.getBoolean("premium", false);
+                String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                premium=sharedPreferences.getBoolean("premium",false);
+//                SharedPreferences result_premium = getSharedPreferences("spotify", 0);
+//                premium = result_premium.getBoolean("premium", false);
                 if(premium==true){
                     Toast.makeText(getApplicationContext(), "Your already premium.\n Enjoy it :)", Toast.LENGTH_SHORT).show();
                 }
