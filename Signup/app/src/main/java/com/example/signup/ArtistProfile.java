@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * This an activity shows artist profile and his songs
+ * This an activity shows artist profile and his song
  * @version 1.0
  */
 

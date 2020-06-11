@@ -33,6 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * This is the begining activity in sign in process
+ * https://www.youtube.com/watch?v=GP5OyYDu_mU used to understand post and get methods
  * @version 1.0
  */
 public class LoginActivity extends AppCompatActivity {

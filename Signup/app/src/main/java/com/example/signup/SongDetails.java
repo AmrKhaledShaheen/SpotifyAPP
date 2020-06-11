@@ -19,6 +19,7 @@ import org.w3c.dom.Text;
 
 /**
  * This is activity shows Song Details - its time - name - display picture
+ * playing songs, i used this link https://www.youtube.com/watch?v=QVI7NUvMgXU
  * @version 1.0
  */
 public class SongDetails extends AppCompatActivity {
