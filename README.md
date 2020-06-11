@@ -16,3 +16,9 @@ AndroidTeam5
                                   b)Logout.
                                   c)Signup with another account.
                     5)Tookin: On opening the app check if their is email that has logged in or not. to open the welcomepage or the homepage.
+### For Omar Hesham:
+
+                    1)Audio-Player: play, pause, next, previous and volume controller, like a song and follow artists
+                    2)Artist View: Showing all artists and allow user to choose from them whom to follow=
+                    3)Playlist Manager: add and remove songs to playlist
+                    
