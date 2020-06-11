@@ -22,7 +22,7 @@ AndroidTeam5
                     2)Artist View: Showing all artists and allow user to choose from them whom to follow=
                     3)Playlist Manager: add and remove songs to playlist
 ## Links helped us in our work:
-          - [Email verification](https://youtu.be/RahBCY5BfS0) 
+          [Email verification](https://youtu.be/RahBCY5BfS0) 
           - [Horizontal ImageView Slider](https://www.youtube.com/watch?v=94rCjYxvzEE&t=989s)
           - [Horizontal ImageView Slider](https://www.youtube.com/watch?v=UsXv6VRqZKs)
           - https://youtu.be/GD1Z3LrZac8 for sharedpreference to save and load data
