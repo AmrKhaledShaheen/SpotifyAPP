@@ -253,8 +253,8 @@ public class ChooseArtist extends AppCompatActivity {
      */
     public void goSearch(View view)
     {
-        Intent intent=new Intent(this, Searchartist.class);
-        startActivity(intent);
+        //Intent intent=new Intent(this, Searchartist.class);
+        //startActivity(intent);
     }
     /**
      * saves number of liked artists

@@ -181,8 +181,8 @@ public class Library extends AppCompatActivity {
      */
     public void goSearch(View view)
     {
-        Intent intent=new Intent(this, Searchartist.class);
-        startActivity(intent);
+        //Intent intent=new Intent(this, Searchartist.class);
+        //startActivity(intent);
     }
     /*public void goLibrary(View view)
     {

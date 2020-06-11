@@ -3,7 +3,10 @@ package com.example.signup;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
+/**
+ * This an activity is for sharedprefernces for saving data
+ * @version 1.0
+ */
 public class Shared {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;

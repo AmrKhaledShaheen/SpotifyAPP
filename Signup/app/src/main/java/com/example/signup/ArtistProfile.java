@@ -14,6 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * This an activity shows artist profile and his songs
+ * @version 1.0
+ */
+
 public class ArtistProfile extends AppCompatActivity {
     private String [] adamSongs={"sugar","maps"};
     private String [] amrSongs={"zaymanty","bahebu"};
@@ -39,6 +44,9 @@ public class ArtistProfile extends AppCompatActivity {
         editor=sharedPreferences.edit();
         whichArtist();
     }
+    /**
+     * Defines which artist to show his details
+     */
     public void whichArtist()
     {
         System.out.println("HIBYE");
@@ -87,6 +95,9 @@ public class ArtistProfile extends AppCompatActivity {
             fillartistsongs(hamakiSongs,artistName);
         }
     }
+    /**
+     * Shows all songs of artist
+     */
     public void fillartistsongs(String [] songs,String Name)
     {
         LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -256,6 +267,10 @@ public class ArtistProfile extends AppCompatActivity {
             }
         }
     }
+    /**
+     * opens SongDetails activity
+     * @see SongDetails
+     */
     public void opensongDetails(View view)
     {
         Button btn=(Button) view;

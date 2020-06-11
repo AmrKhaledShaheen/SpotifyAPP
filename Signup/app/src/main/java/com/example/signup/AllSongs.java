@@ -15,6 +15,11 @@ import android.widget.TextView;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * This an activity shows all songs to choose between them
+ * @version 1.0
+ */
+
 public class AllSongs extends AppCompatActivity {
     private LinearLayout linearLayout;
     private TextView textView;
@@ -44,6 +49,9 @@ public class AllSongs extends AppCompatActivity {
 
 
     }
+    /**
+     * loads data in sharedpreferences to show songs of playlist
+     */
     public void loadData()
     {
         playlistName=sharedPreferences.getString("playlistName","not found");
@@ -127,6 +135,10 @@ public class AllSongs extends AppCompatActivity {
         }
 
     }
+    /**
+     * used to like and dislike song and shows an icon which specifies that
+     * @param v
+     */
     public void chooseMe(View v)
     {
         Button b=(Button) v;
@@ -155,6 +167,10 @@ public class AllSongs extends AppCompatActivity {
         linearLayout.removeViewAt(index);
         linearLayout.addView(b,index);
     }
+    /**
+     * Save liked songs for playlist
+     * @param view
+     */
     public void saveAddedSongs(View view) {
         int count=0;
         for (int i = 0; i < songstateArr.length; i++)

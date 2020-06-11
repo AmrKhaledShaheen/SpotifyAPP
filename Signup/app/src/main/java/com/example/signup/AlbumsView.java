@@ -97,14 +97,14 @@ public class AlbumsView extends AppCompatActivity {
         startActivity(intent);
     }
     /**
-     * opens searchartist activity
-     * @see Searchartist
+     * opens Search activity
+     * @see Search
      * @param view
      */
     public void goSearch(View view)
     {
-        Intent intent=new Intent(this, Searchartist.class);
-        startActivity(intent);
+        //Intent intent=new Intent(this, Search.class);
+        //startActivity(intent);
     }
     /**
      * opens artist activity

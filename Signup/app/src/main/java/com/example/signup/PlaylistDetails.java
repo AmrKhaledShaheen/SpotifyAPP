@@ -262,8 +262,8 @@ public class PlaylistDetails extends AppCompatActivity {
      * @see Searchartist
      */
     public void goSearch(View view) {
-        Intent intent = new Intent(this,Logout.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this,Logout.class);
+        //startActivity(intent);
     }
 
     /**

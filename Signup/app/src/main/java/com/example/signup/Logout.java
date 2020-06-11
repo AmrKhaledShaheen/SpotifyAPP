@@ -26,7 +26,10 @@ import java.io.File;
 import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
+/**
+ * This an activity used to log out from logged in email
+ * @version 1.0
+ */
 
 public class Logout extends AppCompatActivity {
     SharedPreferences sharedPreferences;
@@ -49,6 +52,10 @@ public class Logout extends AppCompatActivity {
         editor.commit();
 
     }
+    /**
+     * checks if certain email is signed in before
+     * @param view
+     */
     public void anotheraccclicked(View view) {
 
         Intent intent = new Intent(getBaseContext(), MainActivity.class);

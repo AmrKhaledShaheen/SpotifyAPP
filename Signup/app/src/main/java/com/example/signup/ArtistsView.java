@@ -14,6 +14,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * This an activity shows liked artists of user
+ * @version 1.0
+ */
+
 public class ArtistsView extends AppCompatActivity {
     private Button playlistsButton,artistsButton,albums,homeButton,searchButton,libraryButton,premiumButton,chooseartists_0artistsButton;
     private TextView textView1,textView2;
@@ -73,6 +78,10 @@ public class ArtistsView extends AppCompatActivity {
         loadData();
         //checknumberofartists();
     }
+
+    /**
+     * loads data of sharedpreferences to view liked artists
+     */
     public void loadData()
     {
         numberofartists=sharedPreferences.getInt("numberofartists",0);
@@ -165,42 +174,71 @@ public class ArtistsView extends AppCompatActivity {
         }
 
     }
+    /**
+     * call chooseArtist function
+     */
     public void openChooseArtist(View view)
     {
         chooseArtist();
     }
+
+    /**
+     * opens ChooseArtist activity
+     * @see ChooseArtist
+     */
     public void chooseArtist()
     {
         Intent intent=new Intent(this, ChooseArtist.class);
         startActivity(intent);
     }
-
+    /**
+     * opens Library activity
+     * @see Library
+     */
     public void playlistsCall(View view)
     {
         Intent intent=new Intent(this, Library.class);
         startActivity(intent);
     }
+    /**
+     * opens AlbumsView activity
+     * @see AlbumsView
+     */
     public void albumsCall(View view)
     {
         Intent intent=new Intent(this, AlbumsView.class);
         startActivity(intent);
     }
+    /**
+     * opens HomePage activity
+     * @see HomePage
+     */
     public void goHome(View view)
     {
         Intent intent=new Intent(this, HomePage.class);
         startActivity(intent);
     }
-
+    /**
+     * opens Premium activity
+     * @see Premiumm
+     */
     public void goPremium(View view)
     {
         Intent intent=new Intent(this, Premiumm.class);
         startActivity(intent);
     }
-
+    /**
+     * opens Search activity
+     * @see Search
+     */
     public void goSearch(View view)
     {
         return;
     }
+    /**
+     * opens Library activity
+     * @see Library
+     */
     public void goLibrary(View view)
     {
         Intent intent=new Intent(this, Library.class);
@@ -217,6 +255,9 @@ public class ArtistsView extends AppCompatActivity {
         searchButton.setCompoundDrawables(null,search1,null,null);
         libraryButton.setCompoundDrawables(null,library1,null,null);
     }*/
+    /**
+     * counts number of liked artists
+     */
     public void checknumberofartists()
     {
         LinearLayout.LayoutParams k=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -298,6 +339,11 @@ public class ArtistsView extends AppCompatActivity {
         }
 
     }
+    /**
+     * shows profile of artist
+     * open ArtistProfile activity
+     * @see ArtistProfile
+     */
     public void showProfile(View view)
     {
 
