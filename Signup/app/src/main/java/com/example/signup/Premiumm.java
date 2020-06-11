@@ -77,6 +77,12 @@ public class Premiumm extends AppCompatActivity {
         Intent intent = new Intent(this, Library.class);
         startActivity(intent);
     }
+    public void goLogout(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(), Logout.class);
+        startActivity(intent);
+
+    }
 ///////////////////////////////////////////////////
     ViewPager viewPager;
     Adapter adapter;

@@ -10,21 +10,35 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 /**
- * This is the home page when users log in
+ * This is the home page when users log in or sign up
  * @version 1.0
  */
 
 public class HomePage extends AppCompatActivity {
+///////////////////////////////////////////////////////////////////////////////
+DataServer dataServer;
+private Call<List<Search>> call;
 
+///////////////////////////////////////////////////////////////////////////////
     /**
      * String variables which take name of singers
      */
@@ -39,6 +53,13 @@ Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
 private Button homeButton,searchButton,libraryButton,premiumButton;
 private SharedPreferences sharedPreferences;
 private SharedPreferences.Editor editor;
+//////////////////
+
+SearchView mysearch;//////////
+ListView mylist;//////////////
+ArrayList<String> list;////////
+ArrayAdapter<String> adapter;//
+/////////////////////////////
     /**
      * Integer indicates number of liked artists
      */
@@ -109,6 +130,15 @@ public void img3_clicked(View view)
             startActivity(intent);
         }
 
+    }
+    /**
+     *  set the search visible
+
+     * @param view
+     */
+    public void goSearch(View view)
+    {
+        mysearch.setVisibility(View.VISIBLE);
     }
     /**
      * checks which singer i chooose then go to his/her activity
@@ -225,7 +255,7 @@ public void img3_clicked(View view)
      * @param view
      * @param list
      */
-    public void yrab(View view,List list) {
+    public void setimg(View view,List list) {
         //////////////////////////////////////////////////////////////////images
         ImageView img3 = (ImageView) findViewById(R.id.ThirdImageLiked);
         ImageView img4 = (ImageView) findViewById(R.id.FourthImageLiked);
@@ -340,6 +370,11 @@ public void img3_clicked(View view)
         }
     }
 ///////////////////////
+    /**
+     * takes from server all songs and set it in listview
+     * search on what user write
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -423,7 +458,7 @@ public void img3_clicked(View view)
             }
         }
         ImageView x = null;
-        yrab(x,namesoflikedB);
+        setimg(x,namesoflikedB);
         SharedPreferences result_email= getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences result_password= getSharedPreferences("spotify", Context.MODE_PRIVATE);
         SharedPreferences result_username= getSharedPreferences("spotify", Context.MODE_PRIVATE);
@@ -431,6 +466,153 @@ public void img3_clicked(View view)
         String email =result_email.getString("email","Data not found"); //email
         String password =result_password.getString("password","Data not found"); // password
         String username =result_username.getString("username","Data not found"); // username
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        mysearch=(SearchView)findViewById(R.id.search);
+        mylist=(ListView)findViewById(R.id.list);
+        list=new ArrayList<String>();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://my-json-server.typicode.com/AmrKhaledShaheen/SpotifyAPP/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
+        dataServer=retrofit.create(DataServer.class);
+        call=dataServer.getSearchs();
+        call.enqueue(new Callback<List<Search>>() {
+            @Override
+            public void onResponse(Call<List<Search>> call, Response<List<Search>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(HomePage.this,"Code: " + response.code(),Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                List<Search> searchs=response.body();
+
+                for(Search search:searchs)
+                {
+                    list.add( search.getSong_name());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Search>> call, Throwable t) {
+                Toast.makeText(HomePage.this,t.getMessage().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
+        mylist.setAdapter(adapter);
+        mysearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        if(adapter.getItem(position).matches("EL OMR"))
+                        {
+                            Toast.makeText(HomePage.this, "weee", Toast.LENGTH_SHORT).show();
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  EL OMR");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("LYA"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  LYA");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("Zaymanty"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  Zaymanty");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("Bahebu"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  Bahebu");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("Helw elmakan"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  Helw elmakan");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("Wanta maaya"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  Wanta maaya");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("Ya Sattar"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  Ya Sattar");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                        if(adapter.getItem(position).matches("We A3mal Eih"))
+                        {
+                            String preference_name=getSharedPreferences("spotify",MODE_PRIVATE).getString("currentEmail","not found");
+                            sharedPreferences=getSharedPreferences(preference_name,MODE_PRIVATE);
+                            SharedPreferences.Editor editor= sharedPreferences.edit();
+                            editor.putString("songName","  We A3mal Eih");
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), SongDetails.class);
+                            startActivity(intent);
+                        }
+                    }
+                });
+                if(newText!="" ) {
+                    mylist.setVisibility(View.VISIBLE);
+                }
+                if(newText.isEmpty() )
+                {
+                    mylist.setVisibility(View.GONE);
+                }
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        mysearch.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                mysearch.setVisibility(View.INVISIBLE);
+                return false;
+            }
+        });
     }
 }

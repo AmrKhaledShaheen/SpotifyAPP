@@ -16,6 +16,8 @@ import retrofit2.http.POST;
 public interface DataServer {
     @GET("posts")
     Call<List<Post>> getPosts();
+    @GET("songs")
+    Call<List<Search>> getSearchs();
     @POST("posts")
     Call<Post>createPost(@Body Post post);
 
