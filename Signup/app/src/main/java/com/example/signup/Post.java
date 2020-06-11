@@ -3,6 +3,8 @@ package com.example.signup;
 /**
  * a class with variables needed to check on in signup and signin process
  * @verison 1.0
+ *  This small course help us to make the mock sever
+ * https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM
 
  */
 public class Post {

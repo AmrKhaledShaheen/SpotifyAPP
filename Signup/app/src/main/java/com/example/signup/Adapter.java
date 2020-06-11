@@ -14,6 +14,9 @@ import java.util.List;
 
 /**
  * This is a class for horizontal image scrolling/recycle view
+ * these two videos help us to make horizontal image scrolling
+ * https://www.youtube.com/watch?v=94rCjYxvzEE&t=989s
+ * https://www.youtube.com/watch?v=UsXv6VRqZKs
  * @version 1.0
  */
 

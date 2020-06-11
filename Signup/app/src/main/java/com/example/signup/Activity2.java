@@ -28,6 +28,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * This is the begining activity in sign up process
+ * For shared preferences we use help from this https://youtu.be/GD1Z3LrZac8
+ * For mock server we use retrofit with help from this small course https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM
  * @version 1.0
  */
 

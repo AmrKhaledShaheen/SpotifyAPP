@@ -28,6 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * The second activity in signup process
  * @version 1.0
+ * these two tutorials help us to make the eye visibility of password
+ * https://www.youtube.com/watch?v=veOZTvAdzJ8
+ * https://www.youtube.com/watch?v=KNS3Q_VGZeo
  */
 public class CreatePass extends AppCompatActivity {
     SharedPreferences sharedPreferences;
@@ -37,32 +40,6 @@ public class CreatePass extends AppCompatActivity {
      * @param view
      * @see birthdate
      */
-//    public void OpenFourthSignup(View view) {
-//
-//        Button buttonNext = (Button) findViewById(R.id.button);
-//        Animation animation = AnimationUtils.loadAnimation(this, R.anim.animationscalebutton);
-//        buttonNext.startAnimation(animation);
-//
-//        //get the email
-//        SharedPreferences result=getSharedPreferences("email", Context.MODE_PRIVATE);
-//        String email =result.getString("email","Data not found");
-//        Toast.makeText(this, email+"\n"+editext3, Toast.LENGTH_SHORT).show();
-//       // String email2 =result.getString("email2","Data not found");
-//        //Toast.makeText(this, email+"\n"+email2, Toast.LENGTH_SHORT).show();
-//        //send password
-////        sharedPreferences=getSharedPreferences("password", Context.MODE_PRIVATE);
-////        SharedPreferences.Editor editor= sharedPreferences.edit();
-////        editor.putString("password",editext3.getText().toString());
-////        //send email
-////        editor.putString("email",email);
-////        editor.apply();
-//        ///Open new window
-//        Intent intent = new Intent(getApplicationContext(), birthdate.class);
-//        startActivity(intent);
-//    }
-
-
-
     /**
      * creates addTextChangedListener --> checks on password length if greater than 8 makes both textviews invisible and make button enabled and if less makes button disabled
      * creates setOnKeyListener checks on password length

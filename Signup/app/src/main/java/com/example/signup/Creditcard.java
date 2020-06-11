@@ -16,6 +16,9 @@ import android.widget.Toast;
 /**
  * This is an activity to take number of credit card and make email confirmation
  * @version 1.0
+ * These two tutorial help us in mail verfication"send mail to the mail user signed in or signined up with"
+ * https://youtu.be/RahBCY5BfS0
+ * https://support.google.com/accounts/answer/1064203?co=GENIE.Platform%3DDesktop&hl=en&oco=1 "to access sending mail from app in gmail"
  */
 
 

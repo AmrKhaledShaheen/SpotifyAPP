@@ -31,6 +31,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * This is the home page when users log in or sign up
  * @version 1.0
+ * using the retrofit mock server small course https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM
+ * using this tutorial to make search with list view https://www.youtube.com/watch?v=f1nC8HcbMOw&t=266s
+ * using in scroll https://www.youtube.com/watch?v=o2VfWU9EUtY and https://www.youtube.com/watch?v=6rz4fgZ2qP0
+ * using to close the search https://developer.android.com/reference/android/widget/SearchView.OnCloseListener
  */
 
 public class HomePage extends AppCompatActivity {

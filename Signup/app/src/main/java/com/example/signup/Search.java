@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 /**
  * This an activity used to search between songs names
  * @version 1.0
+ * Retrofit server https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM
  */
 
 public class Search {

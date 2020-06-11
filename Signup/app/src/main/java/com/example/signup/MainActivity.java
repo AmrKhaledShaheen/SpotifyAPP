@@ -16,6 +16,13 @@ import android.widget.Button;
 /**
  * The main activity for the Application
  * @verison 1.0
+ * These links are used in almost all classes we learned how to use it at the beginning
+ * Course ...
+ * For setimage we use help from https://stackoverflow.com/questions/5089300/how-can-i-change-the-image-of-an-imageview
+ * For gradient we use help from https://stackoverflow.com/questions/13929877/how-to-make-gradient-background-in-android
+ * For setvisibility we use help from https://stackoverflow.com/questions/7348150/android-why-setvisibilityview-gone-or-setvisibilityview-invisible-do-not
+ * For text-change-listner we use help from https://stackoverflow.com/questions/20824634/android-on-text-change-listener
+ * For click-on-listner we use help from https://developer.android.com/reference/android/view/View.OnClickListener
  * This is the first screen the user sees
  */
 

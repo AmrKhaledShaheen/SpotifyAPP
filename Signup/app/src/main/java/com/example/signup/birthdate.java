@@ -27,6 +27,8 @@ import android.widget.Toast;
 
 /**
  * The third activity in signup process
+ * these tutorial help us to use datapicker
+ * https://www.youtube.com/watch?v=hwe1abDO2Ag
  * @version 1.0
  */
 public class birthdate extends AppCompatActivity  {

@@ -14,8 +14,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- * check if he has logged in before or not
+ *
  * @version 1.0
+ * check if he has logged in before or not and sending message to mail
+ *  https://youtu.be/RahBCY5BfS0
+ *  https://support.google.com/accounts/answer/1064203?co=GENIE.Platform%3DDesktop&hl=en&oco=1 "to access sending mail from app in gmail"
+ *
  */
 
 public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {

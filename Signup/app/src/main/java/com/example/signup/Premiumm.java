@@ -17,6 +17,9 @@ import java.util.zip.Inflater;
 /**
  * Activity which allows user to promote his account to be premium
  * @version 1.0
+ * To make horizontal imageview sllider
+ *  https://www.youtube.com/watch?v=94rCjYxvzEE&t=989s
+ *  https://www.youtube.com/watch?v=UsXv6VRqZKs
  */
 
 public class Premiumm extends AppCompatActivity {

@@ -12,6 +12,8 @@ import retrofit2.http.POST;
 /**
  * This is the fake server we used to check signup and signin process
  * @verison 1.0
+ *  This small course help us to make the mock sever
+ * https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM
  */
 public interface DataServer {
     @GET("posts")

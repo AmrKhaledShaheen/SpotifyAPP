@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 /**
  * This an activity is for sharedprefernces for saving data
  * @version 1.0
+ *
  */
 public class Shared {
     SharedPreferences sharedPreferences;
