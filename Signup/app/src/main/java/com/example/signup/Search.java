@@ -2,6 +2,10 @@ package com.example.signup;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+/**
+ * This an activity used to search between songs names
+ * @version 1.0
+ */
 
 public class Search {
     @SerializedName("song_name")

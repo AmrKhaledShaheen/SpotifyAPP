@@ -23,17 +23,30 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * This is the Library main activity which shows playlist created by user
+ * @version 1.0
+ */
 
 public class Library extends AppCompatActivity {
 
     private Button playlistsButton,artistsButton,albums,homeButton,searchButton,libraryButton,premiumButton,createplaylistButton,addplaylistButton;
     private int k=1;
+    /**
+     * EditText variable which takes name of new playlist
+     */
     private EditText newplaylistEditText;
+    /**
+     * LinearLayout to add playlist in order
+     */
     LinearLayout createplaylistLinearLayout,allplaylistsLinearLayout;
     Drawable spotify1,spotify2,library1,library2,home1,home2,search1,search2;
     Drawable[] drawableArray={spotify1,spotify2,search1,search2,home1,home2,library1,library2};
     Button [] buttonsArray={homeButton,libraryButton,searchButton,premiumButton};
     private DataServer dataServer;
+    /**
+     * SharedPreferences variables which save and load certain data
+     */
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -136,14 +149,7 @@ public class Library extends AppCompatActivity {
         }
 
     }*/
-    public void de7k(View view){
-        System.out.println("SASDASD");
-    }
-    public void playlistsCall(View view)
-    {
-        setContent(R.layout.activity_library);
-        playlistsButton.setTextColor(Color.WHITE);
-    }
+
    /* public void artistsCall(View view)
     {
         setContent(R.layout.activity_artists_view);
@@ -151,22 +157,32 @@ public class Library extends AppCompatActivity {
 
 
     }*/
+    /**
+     * opens AlbumsView activity
+     * @see AlbumsView
+     */
     public void albumsCall(View view)
     {
         Intent intent=new Intent(this, AlbumsView.class);
         startActivity(intent);
     }
+    /**
+     * opens HomePage activity
+     * @see HomePage
+     */
     public void goHome(View view)
     {
         Intent intent=new Intent(this, HomePage.class);
         startActivity(intent);
     }
-
+    /**
+     * opens Searchartist activity
+     * @see Searchartist
+     */
     public void goSearch(View view)
     {
-        /*resetAll();
-        searchButton.setTextColor(Color.WHITE);
-        searchButton.setCompoundDrawables(null,search2,null,null);*/
+        //Intent intent=new Intent(this, Searchartist.class);
+        //startActivity(intent);
     }
     /*public void goLibrary(View view)
     {
@@ -176,6 +192,10 @@ public class Library extends AppCompatActivity {
 
         libraryButton.setCompoundDrawables(null,library2,null,null);
     }*/
+    /**
+     * opens Premiumm activity
+     * @see Premiumm
+     */
     public void goPremium(View view)
     {
         /*resetAll();
@@ -186,6 +206,10 @@ public class Library extends AppCompatActivity {
         Intent intent=new Intent(this, Premiumm.class);
         startActivity(intent);
     }
+    /**
+     * sets visibility of linearlayout to visible responsible for creating playlist
+     * @param view
+     */
     public void showCreate(View view)
     {
 
@@ -202,11 +226,19 @@ public class Library extends AppCompatActivity {
         searchButton.setCompoundDrawables(null,search1,null,null);
         libraryButton.setCompoundDrawables(null,library1,null,null);*/
     }
+    /**
+     * sets visibility of linearlayout to invisible responsible for creating playlist
+     * @param view
+     */
     public void hidePlaylist(View view)
     {
 
         createplaylistLinearLayout.setVisibility(View.INVISIBLE);
     }
+    /**
+     * Main function of creating playlist giving it its name and add it to linearlayout of playlists
+     * @param view
+     */
     public void createPlaylist(View view)
     {
         String koko;
@@ -236,6 +268,10 @@ public class Library extends AppCompatActivity {
         playlists_count++;
         saveData(koko);
     }
+    /**
+     * opens PlaylistDetails activity to show details of playlist ---Liked songs
+     * @see PlaylistDetails
+     */
     public void showPlaylist(View v)
     {
         Button b= (Button) v;
@@ -246,12 +282,18 @@ public class Library extends AppCompatActivity {
         Intent intent=new Intent(this, PlaylistDetails.class);
         startActivity(intent);
     }
+    /**
+     * opens ArtistsView activity
+     * @see ArtistsView
+     */
     public void openArtistsView(View view)
     {
         Intent intent=new Intent(this, ArtistsView.class);
         startActivity(intent);
     }
-
+    /**
+     * save data in sharedpreference to be loaded
+     */
     public void saveData(String koko)
     {
 
@@ -259,7 +301,9 @@ public class Library extends AppCompatActivity {
         editor.putString("playlist"+playlists_count,koko);
         editor.apply();
     }
-
+    /**
+     * load data in sharedpreference to show created playlists
+     */
     public void loadData() {
 
         //SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
