@@ -23,14 +23,34 @@ import java.io.Serializable;
 
 import static android.view.View.VISIBLE;
 
+/**
+ * This is the activity where you choose which artists to like
+ * @version 1.0
+ */
+
 public class ChooseArtist extends AppCompatActivity {
 
+    /**
+     * ImageViews variables which show wether artist is liked or not
+     */
     private ImageView artist1true,artist2true,artist3true,artist4true,artist5true,artist6true;
+    /**
+     * TextViews variables which take name of artists
+     */
     private TextView artist1TextView,artist2TextView,artist3TextView,artist4TextView,artist5TextView,artist6TextView;
+    /**
+     * ImageViews variables show image of artists
+     */
     private ImageView artist1ImageView,artist2ImageView,artist3ImageView,artist4ImageView,artist5ImageView,artist6ImageView;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    /**
+     * Boolean variables whether artist is liked or not
+     */
     private boolean artist1,artist2,artist3,artist4,artist5,artist6;
+    /**
+     * Integer variable which take number of liked artists
+     */
     private int numberOfArtists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +79,10 @@ public class ChooseArtist extends AppCompatActivity {
         artist6ImageView=(ImageView) findViewById(R.id.artist6imageView);
         loadData();
     }
+
+    /**
+     * saves data in sharedpreference to load it again when activity is openned
+     */
     public void saveData()
 
     {
@@ -101,6 +125,9 @@ public class ChooseArtist extends AppCompatActivity {
         System.out.println(count);
         System.out.println(sharedPreferences.getString("artist2","sdsd"));
     }
+    /**
+     * load data in sharedpreference to load it again when activity is openned
+     */
     public void loadData()
     {
         numberOfArtists=sharedPreferences.getInt("numberofartists",0);
@@ -136,6 +163,10 @@ public class ChooseArtist extends AppCompatActivity {
         }
 
     }
+    /**
+     * function of liking and disliking artist and showing it by icon
+     * @param view
+     */
     public void chooseMe(View view)
     {
         ImageView imageView=(ImageView) findViewById(view.getId());
@@ -216,13 +247,19 @@ public class ChooseArtist extends AppCompatActivity {
         }
         editor.apply();
     }
-
+    /**
+     * opens Searchartist activity
+     * @see Searchartist
+     */
     public void goSearch(View view)
     {
         Intent intent=new Intent(this, Searchartist.class);
         startActivity(intent);
     }
-
+    /**
+     * saves number of liked artists
+     * @param view
+     */
     @SuppressLint("SetTextI18n")
     public void savelikedArtists(View view)
     {

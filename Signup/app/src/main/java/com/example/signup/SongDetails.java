@@ -17,6 +17,10 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+/**
+ * This is activity shows Song Details - its time - name - display picture
+ * @version 1.0
+ */
 public class SongDetails extends AppCompatActivity {
     private boolean isPlaying=false;
     private String songName;
@@ -93,6 +97,9 @@ public class SongDetails extends AppCompatActivity {
             currentsongtimeTextView.setText(milliSecondsToTimer(currentDuration));
         }
     };
+    /**
+     * updates seekbar with real time of mediaplayer for the played song
+     */
     private void updateSeekBar()
     {
         if(mediaPlayer.isPlaying())
@@ -102,6 +109,9 @@ public class SongDetails extends AppCompatActivity {
         }
 
     }
+    /**
+     * converts time of song to mins/secs/hours
+     */
     private String milliSecondsToTimer(long milliSeconds)
     {
         int seconds=(int)milliSeconds/1000;
@@ -129,7 +139,9 @@ public class SongDetails extends AppCompatActivity {
 
         return timerString;
     }
-
+    /**
+     * shows name of song - picture of song - sets mediaplayer with link of selected song
+     */
     public void showsongsDetails()
     {
         //songName=getIntent().getStringExtra("songName");
@@ -199,6 +211,9 @@ public class SongDetails extends AppCompatActivity {
         }
 
     }
+    /**
+     * responsible for changing icon which shows wether song is playing or paused
+     */
     public void play_pause(View view)
     {
        if(isPlaying)
@@ -217,6 +232,10 @@ public class SongDetails extends AppCompatActivity {
            updateSeekBar();
        }
     }
+    /**
+     * prepare mediaplayer with link
+     * @param url sets mediaplayer with a certain song
+     */
     private void prepareMediaPlayer(String url)
     {
         try{
@@ -235,6 +254,9 @@ public class SongDetails extends AppCompatActivity {
             Toast.makeText(this,exception.getMessage(),Toast.LENGTH_SHORT).show();
         }
     }
+    /**
+     * plays next song
+     */
     public void next(View v)
     {
         String name=sharedPreferences.getString("songName","not found");
@@ -283,6 +305,9 @@ public class SongDetails extends AppCompatActivity {
         mediaPlayer.start();
 
     }
+    /**
+     * plays previous song
+     */
     public void previous(View v)
     {
         String name=sharedPreferences.getString("songName","not found");

@@ -18,14 +18,34 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This activity responsible for showing playlist information - name of playlist - liked songs
+ * @version 1.0
+ */
+
 public class PlaylistDetails extends AppCompatActivity {
+    /**
+     * Button variable used to open all songs for user to choose from it which to be added in playlist he created
+     */
     private Button addSongs;
+    /**
+     * responsible for showing name of playlist
+     */
     private TextView playlistNameTextView;
+    /**
+     * LinearLayout variable used to show all songs chosen by user
+     */
     private LinearLayout songslinearLayout;
     private String playlistName;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    /**
+     * Integer variable indicates number of songs in playlist
+     */
     private int songs_number;
+    /**
+     * MediaPlayer variable used to play/pause song
+     */
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
     private Button playbar;
@@ -33,6 +53,9 @@ public class PlaylistDetails extends AppCompatActivity {
     private Drawable img,img2;
     private ImageView imageView;
     private int currentSec;
+    /**
+     * String variable used shows which song is playing
+     */
     private String current_url;
 
     @Override
@@ -60,7 +83,9 @@ public class PlaylistDetails extends AppCompatActivity {
         loadData();
 
     }
-
+    /**
+     * loads data in sharedpreferences
+     */
     public void loadData() {
         boolean isVisible=sharedPreferences.getBoolean("isVisible",false);
         boolean Playing=sharedPreferences.getBoolean("isPlaying",false);
@@ -198,7 +223,10 @@ public class PlaylistDetails extends AppCompatActivity {
             songslinearLayout.addView(button, k);
         }
     }
-
+    /**
+     * opens SongDetails activity to play song
+     * @see SongDetails
+     */
     public void opensongDetails(View view) {
         Button btn = (Button) view;
         String songName = btn.getText().toString();
@@ -213,32 +241,51 @@ public class PlaylistDetails extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+    /**
+     * opens AllSongs activity to choose songs
+     * @see AllSongs
+     */
     public void goToAllSongs(View view) {
         Intent intent = new Intent(this, AllSongs.class);
         startActivity(intent);
     }
-
+    /**
+     * opens HomePage activity
+     * @see HomePage
+     */
     public void goHome(View view) {
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
-
+    /**
+     * open Searchartist activity
+     * @see Searchartist
+     */
     public void goSearch(View view) {
         Intent intent = new Intent(this,Logout.class);
         startActivity(intent);
     }
 
+    /**
+     * open Library activity
+     * @see Library
+     */
     public void goLibrary(View view) {
         Intent intent = new Intent(this, Library.class);
         startActivity(intent);
     }
-
+    /**
+     * open Premiumm activity
+     * @see Premiumm
+     */
     public void goPremium(View view) {
         Intent intent = new Intent(this, Premiumm.class);
         startActivity(intent);
     }
 
+    /**
+     * shows playbar of played song
+     */
     public void show_playbar(View view) {
 
         if (playbar.getVisibility() == View.INVISIBLE) {
@@ -415,6 +462,10 @@ public class PlaylistDetails extends AppCompatActivity {
         }
 
     }
+    /**
+     * prepare mediaplayer with url of a song
+     * @param url used to set mediaplayer
+     */
     private void prepareMediaPlayer(String url)
     {
         try{

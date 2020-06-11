@@ -9,6 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * This an activity which shows albums
+ * @version 1.0
+ */
+
 public class AlbumsView extends AppCompatActivity {
     private Button playlistsButton;
     private Button artistsButton;
@@ -58,25 +63,54 @@ public class AlbumsView extends AppCompatActivity {
         libraryButton.setCompoundDrawables(null,library2,null,null);
     }
 
+    /**
+     * opens library activity
+     * @see Library
+     * @param view
+     */
+
     public void playlistsCall(View view)
     {
         Intent intent=new Intent(this, Library.class);
         startActivity(intent);
     }
+
+    /**
+     * opens premium activity
+     * @see Premiumm
+     * @param view
+     */
     public void goPremium(View view)
     {
         Intent intent=new Intent(this, Premiumm.class);
         startActivity(intent);
     }
+
+    /**
+     * opens home activity
+     * @see HomePage
+     * @param view
+     */
     public void goHome(View view)
     {
         Intent intent=new Intent(this, HomePage.class);
         startActivity(intent);
     }
+    /**
+     * opens searchartist activity
+     * @see Searchartist
+     * @param view
+     */
     public void goSearch(View view)
     {
-        return;
+        Intent intent=new Intent(this, Searchartist.class);
+        startActivity(intent);
     }
+    /**
+     * opens artist activity
+     * @see ArtistsView
+     * @param view
+     */
     public void openArtistsView(View view)
     {
         Intent intent=new Intent(this, ArtistsView.class);
