@@ -22,9 +22,9 @@ AndroidTeam5
                     2)Artist View: Showing all artists and allow user to choose from them whom to follow=
                     3)Playlist Manager: add and remove songs to playlist
 ## Links helped us in our work:
-          [Email verification](https://youtu.be/RahBCY5BfS0) 
-          - [Horizontal ImageView Slider](https://www.youtube.com/watch?v=94rCjYxvzEE&t=989s)
-          - [Horizontal ImageView Slider](https://www.youtube.com/watch?v=UsXv6VRqZKs)
+          - https://youtu.be/RahBCY5BfS0 for email verification
+          - https://www.youtube.com/watch?v=94rCjYxvzEE&t=989s for Horizontal ImageView Slider
+          - https://www.youtube.com/watch?v=UsXv6VRqZKs for Horizontal ImageView Slider
           - https://youtu.be/GD1Z3LrZac8 for sharedpreference to save and load data
           - http://rajtech.tech/index.php#tutorial to upload profile picture and make it rounded
           - https://www.youtube.com/playlist?list=PLrnPJCHvNZuCbuD3xpfKzQWOj3AXybSaM mockserver with retrofit
