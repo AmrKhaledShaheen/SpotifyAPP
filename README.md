@@ -15,7 +15,7 @@ AndroidTeam5
                     4)Profile:    a)Upload profile picture from gallery on phone.
                                   b)Logout.
                                   c)Signup with another account.
-                    5)Tookin: On opening the app check if their is email that has logged in or not. to open the welcomepage or the homepage.
+                    5)Token: On opening the app check if their is email that has logged in or not. to open the welcomepage or the homepage.
 ### For Omar Hesham:
 
                     1)Audio-Player: play, pause, next, previous and volume controller, like a song and follow artists
